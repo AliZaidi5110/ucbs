@@ -1,7 +1,8 @@
 import React from "react";
+import { HOME_FAQS, SITE, absoluteUrl } from "@/lib/seo";
 
 interface JsonLdProps {
-  data: Record<string, any>;
+  data: Record<string, unknown> | Record<string, unknown>[];
 }
 
 export const JsonLd: React.FC<JsonLdProps> = ({ data }) => {
@@ -13,95 +14,170 @@ export const JsonLd: React.FC<JsonLdProps> = ({ data }) => {
   );
 };
 
-// Ready-to-use Local Business schema for UCBS
-export const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "LocalBusiness",
-  "name": "Utility Concepts Business Solutions Ltd",
-  "alternateName": "UCBS",
-  "url": "https://www.ucbsltd.co.uk/",
-  "logo": "https://www.ucbsltd.co.uk/logo.png",
-  "image": "https://www.ucbsltd.co.uk/og-image.jpg",
-  "description": "Utility Concepts Business Solutions (UCBS) helps small and growing UK businesses compare, review, and manage business utilities, card payments, telecoms, funding, insurance, and banking.",
-  "telephone": "+44 1437 957009",
-  "email": "info@ucbsltd.co.uk",
-  "address": {
+export const organizationSchema = {
+  "@type": "Organization",
+  "@id": `${SITE.url}/#organization`,
+  name: SITE.legalName,
+  alternateName: SITE.shortName,
+  url: SITE.url,
+  logo: absoluteUrl("/logo.png"),
+  email: SITE.email,
+  telephone: SITE.phone,
+  address: {
     "@type": "PostalAddress",
-    "streetAddress": "12 Scotchwell View",
-    "addressLocality": "Haverfordwest",
-    "addressRegion": "Pembrokeshire, Wales",
-    "postalCode": "SA61 2RE",
-    "addressCountry": "GB"
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.locality,
+    addressRegion: SITE.address.region,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
   },
-  "geo": {
-    "@type": "GeoCoordinates",
-    "latitude": 51.8028,
-    "longitude": -4.9622
+  areaServed: {
+    "@type": "Country",
+    name: "United Kingdom",
   },
-  "areaServed": "GB",
-  "priceRange": "$$"
+  sameAs: [] as string[],
 };
 
-// Generates dynamic Service schema for SEO
-export function generateServiceSchema(title: string, description: string, url: string) {
-  return {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": title,
-    "description": description,
-    "provider": {
-      "@type": "LocalBusiness",
-      "name": "Utility Concepts Business Solutions Ltd",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "12 Scotchwell View",
-        "addressLocality": "Haverfordwest",
-        "addressRegion": "Pembrokeshire, Wales",
-        "postalCode": "SA61 2RE",
-        "addressCountry": "GB"
-      }
-    },
-    "serviceType": "Business Consultation",
-    "areaServed": {
-      "@type": "Country",
-      "name": "United Kingdom"
-    },
-    "url": url
-  };
-}
+export const localBusinessSchema = {
+  "@type": "LocalBusiness",
+  "@id": `${SITE.url}/#localbusiness`,
+  name: SITE.legalName,
+  alternateName: SITE.shortName,
+  url: SITE.url,
+  logo: absoluteUrl("/logo.png"),
+  image: absoluteUrl("/logo.png"),
+  description: SITE.defaultDescription,
+  telephone: SITE.phone,
+  email: SITE.email,
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: SITE.address.street,
+    addressLocality: SITE.address.locality,
+    addressRegion: SITE.address.region,
+    postalCode: SITE.address.postalCode,
+    addressCountry: SITE.address.country,
+  },
+  geo: {
+    "@type": "GeoCoordinates",
+    latitude: 51.8028,
+    longitude: -4.9622,
+  },
+  areaServed: "GB",
+  priceRange: "$$",
+  parentOrganization: {
+    "@id": `${SITE.url}/#organization`,
+  },
+};
 
-// Generates dynamic Article schema for Blog SEO
-export function generateArticleSchema(
+export const websiteSchema = {
+  "@type": "WebSite",
+  "@id": `${SITE.url}/#website`,
+  name: SITE.name,
+  url: SITE.url,
+  description: SITE.defaultDescription,
+  inLanguage: "en-GB",
+  publisher: {
+    "@id": `${SITE.url}/#organization`,
+  },
+};
+
+export const globalSchemaGraph = {
+  "@context": "https://schema.org",
+  "@graph": [organizationSchema, localBusinessSchema, websiteSchema],
+};
+
+export function generateServiceSchema(
   title: string,
-  excerpt: string,
+  description: string,
   url: string,
-  datePublished: string,
-  authorName: string = "Himadhar Alahari",
-  imageUrl: string = "https://www.ucbsltd.co.uk/og-image.jpg"
+  imagePath?: string
 ) {
   return {
     "@context": "https://schema.org",
-    "@type": "TechArticle",
-    "mainEntityOfPage": {
-      "@type": "WebPage",
-      "@id": url
+    "@type": "Service",
+    name: title,
+    description,
+    provider: {
+      "@id": `${SITE.url}/#localbusiness`,
     },
-    "headline": title,
-    "image": imageUrl,
-    "datePublished": datePublished,
-    "dateModified": datePublished,
-    "author": {
-      "@type": "Person",
-      "name": authorName
+    serviceType: title,
+    areaServed: {
+      "@type": "Country",
+      name: "United Kingdom",
     },
-    "publisher": {
-      "@type": "Organization",
-      "name": "Utility Concepts Business Solutions Ltd",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.ucbsltd.co.uk/logo.png"
-      }
+    url,
+    ...(imagePath ? { image: absoluteUrl(imagePath) } : {}),
+  };
+}
+
+export function generateBreadcrumbSchema(
+  items: { name: string; path: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: absoluteUrl(item.path),
+    })),
+  };
+}
+
+export function generateFaqSchema(
+  faqs: readonly { question: string; answer: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  };
+}
+
+export function generateWebPageSchema(
+  title: string,
+  description: string,
+  path: string
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    name: title,
+    description,
+    url: absoluteUrl(path),
+    isPartOf: {
+      "@id": `${SITE.url}/#website`,
     },
-    "description": excerpt
+    about: {
+      "@id": `${SITE.url}/#organization`,
+    },
+    inLanguage: "en-GB",
+  };
+}
+
+export const homeFaqSchema = generateFaqSchema(HOME_FAQS);
+
+export function generateItemListSchema(
+  items: { name: string; url: string; description: string }[]
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    name: "UCBS Business Services",
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      url: item.url,
+      description: item.description,
+    })),
   };
 }

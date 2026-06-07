@@ -1,17 +1,39 @@
 import React from "react";
-import { Metadata } from "next";
 import { ContactForm } from "./ContactForm";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
+import { JsonLd, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "Contact Us | Free Business Cost Review",
-  description: "Get in touch with Utility Concepts Business Solutions (UCBS) Ltd to audit your corporate electricity, gas, merchant terminals, or phone bills.",
-};
+export const metadata = buildMetadata({
+  title: "Contact UCBS Ltd | Free Business Cost Review",
+  description:
+    "Contact UCBS Ltd for a free UK business cost review. Call +44 1437 957009 or email info@ucbsltd.co.uk to audit energy, merchant services, telecoms, and utilities.",
+  path: "/contact",
+  keywords: [
+    "contact UCBS",
+    "free business utility audit",
+    "business energy quote UK",
+    "merchant services enquiry",
+  ],
+});
 
 export default function ContactPage() {
   return (
     <>
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Contact", path: "/contact" },
+        ])}
+      />
+      <JsonLd
+        data={generateWebPageSchema(
+          "Contact UCBS Ltd | Free Business Cost Review",
+          "Contact UCBS Ltd for a free UK business cost review. Call +44 1437 957009 or email info@ucbsltd.co.uk to audit energy, merchant services, telecoms, and utilities.",
+          "/contact"
+        )}
+      />
       <PageHero
         eyebrow="Get In Touch"
         title="Connect with Our Advisors"

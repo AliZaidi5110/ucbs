@@ -1,13 +1,23 @@
 import React from "react";
-import { Metadata } from "next";
 import { Building, Landmark, ShieldCheck, Users, History } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { ReadyToDriveForward } from "@/components/ui/ready-to-drive-forward";
+import { JsonLd, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/seo/json-ld";
+import { buildMetadata } from "@/lib/seo";
 
-export const metadata: Metadata = {
-  title: "About Us | Company Story & Credentials",
-  description: "Learn more about Utility Concepts Business Solutions (UCBS) Ltd. Read our company history, mission values, and meet Director Himadhar Alahari.",
-};
+export const metadata = buildMetadata({
+  title: "About UCBS Ltd | UK Business Cost Savings Experts",
+  description:
+    "Learn about Utility Concepts Business Solutions (UCBS) Ltd — our mission, values, and UK-wide consultancy for business energy, payments, telecoms, and cost audits.",
+  path: "/about",
+  keywords: [
+    "about UCBS",
+    "Utility Concepts Business Solutions",
+    "Haverfordwest business consultant",
+    "UK SME cost savings",
+  ],
+  ogImage: "/f2.png",
+});
 
 const values = [
   {
@@ -30,6 +40,19 @@ const values = [
 export default function AboutPage() {
   return (
     <>
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "About Us", path: "/about" },
+        ])}
+      />
+      <JsonLd
+        data={generateWebPageSchema(
+          "About UCBS Ltd | UK Business Cost Savings Experts",
+          "Learn about Utility Concepts Business Solutions (UCBS) Ltd — our mission, values, and UK-wide consultancy for business energy, payments, telecoms, and cost audits.",
+          "/about"
+        )}
+      />
       <PageHero
         eyebrow="Our Identity"
         title="Utility Concepts Business Solutions Ltd"

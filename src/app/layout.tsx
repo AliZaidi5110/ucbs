@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
-import { JsonLd, localBusinessSchema } from "@/components/seo/json-ld";
+import { JsonLd, globalSchemaGraph } from "@/components/seo/json-ld";
+import { SITE } from "@/lib/seo";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -19,31 +20,66 @@ export const viewport = {
   width: "device-width",
   initialScale: 1,
   maximumScale: 5,
+  themeColor: "#0a2540",
 };
 
 export const metadata: Metadata = {
+  metadataBase: new URL(SITE.url),
+  title: {
+    default: SITE.defaultTitle,
+    template: `%s | ${SITE.name}`,
+  },
+  description: SITE.defaultDescription,
+  keywords: SITE.defaultKeywords,
+  authors: [{ name: SITE.legalName, url: SITE.url }],
+  creator: SITE.legalName,
+  publisher: SITE.legalName,
+  category: "Business Services",
+  applicationName: SITE.name,
+  formatDetection: {
+    email: false,
+    address: false,
+    telephone: false,
+  },
   icons: {
     icon: "/logo.png",
     apple: "/logo.png",
+    shortcut: "/logo.png",
   },
-  title: {
-    default: "UCBS Ltd | Enterprise Business Solutions & Cost Management",
-    template: "%s | UCBS Ltd"
-  },
-  description:
-    "Utility Concepts Business Solutions (UCBS) provides expert cost-saving analysis for UK businesses. Compare business energy, card terminals, telecoms, and more.",
-  metadataBase: new URL("https://www.ucbsltd.co.uk"),
-  alternates: {
-    canonical: "/"
-  },
+  manifest: "/manifest.webmanifest",
   openGraph: {
-    title: "UCBS Ltd | Enterprise Business Solutions & Cost Management",
-    description: "Compare business utilities, merchant solutions, broadband, Ev charging, and finance options to optimize your operations.",
-    url: "https://www.ucbsltd.co.uk",
-    siteName: "UCBS Ltd",
-    locale: "en_GB",
-    type: "website"
-  }
+    title: SITE.defaultTitle,
+    description: SITE.defaultDescription,
+    url: SITE.url,
+    siteName: SITE.name,
+    locale: SITE.locale,
+    type: "website",
+    images: [
+      {
+        url: "/logo.png",
+        width: 1200,
+        height: 630,
+        alt: `${SITE.name} — UK business utility and cost savings consultancy`,
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: SITE.defaultTitle,
+    description: SITE.defaultDescription,
+    images: ["/logo.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
 };
 
 export default function RootLayout({
@@ -53,16 +89,14 @@ export default function RootLayout({
 }>) {
   return (
     <html
-      lang="en"
+      lang="en-GB"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <head>
-        {/* Inject Local Business SEO Schema */}
-        <JsonLd data={localBusinessSchema} />
+        <JsonLd data={globalSchemaGraph} />
       </head>
       <body className="min-h-full flex flex-col bg-background text-foreground transition-colors duration-300">
         <Header />
-        {/* Main content wrapper with skip-to ID */}
         <main id="main-content" className="flex-grow focus:outline-none">
           {children}
         </main>

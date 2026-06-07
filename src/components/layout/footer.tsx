@@ -12,6 +12,8 @@ export const Footer: React.FC = () => {
     { name: "Broadband & Telecoms", href: "/services/broadband-telecoms" },
     { name: "Business Funding", href: "/services/business-funding" },
     { name: "Waste Management", href: "/services/waste-management" },
+    { name: "Water Bills", href: "/services/water-bills" },
+    { name: "Digital Marketing", href: "/services/digital-marketing" },
   ];
 
   const companyLinks = [

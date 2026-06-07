@@ -1,9 +1,14 @@
 import React from "react";
-import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
-import { JsonLd, generateServiceSchema } from "@/components/seo/json-ld";
+import {
+  JsonLd,
+  generateBreadcrumbSchema,
+  generateServiceSchema,
+  generateWebPageSchema,
+} from "@/components/seo/json-ld";
+import { buildMetadata, absoluteUrl } from "@/lib/seo";
 import { getServiceImage } from "@/lib/services-data";
 import {
   Zap,
@@ -163,6 +168,43 @@ const DETAILS_MAP: Record<
   },
 };
 
+const SERVICE_KEYWORDS: Record<string, string[]> = {
+  "business-energy": [
+    "business energy comparison UK",
+    "commercial gas and electricity tariffs",
+    "SME energy broker",
+  ],
+  "merchant-services": [
+    "merchant services UK",
+    "card payment terminals",
+    "business payment gateway",
+    "ePOS solutions UK",
+  ],
+  "broadband-telecoms": [
+    "business broadband UK",
+    "VoIP phone systems",
+    "leased line comparison",
+  ],
+  "business-funding": [
+    "business funding UK",
+    "asset finance broker",
+    "working capital loans SME",
+  ],
+  "waste-management": [
+    "commercial waste management UK",
+    "business recycling services",
+  ],
+  "water-bills": [
+    "business water bill audit",
+    "commercial water rates UK",
+  ],
+  "digital-marketing": [
+    "business web design UK",
+    "local SEO services",
+    "digital marketing SME",
+  ],
+};
+
 // Generate static routes for all services
 export async function generateStaticParams() {
   return Object.keys(DETAILS_MAP).map((slug) => ({
@@ -171,23 +213,26 @@ export async function generateStaticParams() {
 }
 
 // Generate dynamic metadata
-export async function generateMetadata({ params }: Props): Promise<Metadata> {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
   const service = DETAILS_MAP[slug];
 
   if (!service) {
     return {
       title: "Service Not Found",
+      robots: { index: false, follow: false },
     };
   }
 
-  return {
-    title: `${service.title} | Corporate Audits & Reviews`,
-    description: service.summary,
-    alternates: {
-      canonical: `/services/${slug}`,
-    },
-  };
+  const imagePath = getServiceImage(slug);
+
+  return buildMetadata({
+    title: `${service.title} | UK Business Cost Savings`,
+    description: `${service.summary} Free, no-obligation review from UCBS Ltd — trusted UK business utility and cost consultants.`,
+    path: `/services/${slug}`,
+    keywords: SERVICE_KEYWORDS[slug] ?? [],
+    ogImage: imagePath,
+  });
 }
 
 export default async function ServiceDetailPage({ params }: Props) {
@@ -199,22 +244,39 @@ export default async function ServiceDetailPage({ params }: Props) {
   }
 
   const IconComponent = service.icon;
-  const serviceUrl = `https://www.ucbsltd.co.uk/services/${slug}`;
-  const serviceSchema = generateServiceSchema(service.title, service.summary, serviceUrl);
+  const serviceUrl = absoluteUrl(`/services/${slug}`);
+  const serviceImage = getServiceImage(slug);
+  const serviceSchema = generateServiceSchema(
+    service.title,
+    service.summary,
+    serviceUrl,
+    serviceImage
+  );
+  const metaTitle = `${service.title} | UK Business Cost Savings`;
+  const metaDescription = `${service.summary} Free, no-obligation review from UCBS Ltd — trusted UK business utility and cost consultants.`;
 
   return (
     <div className="bg-background">
       <JsonLd data={serviceSchema} />
+      <JsonLd
+        data={generateBreadcrumbSchema([
+          { name: "Home", path: "/" },
+          { name: "Services", path: "/services" },
+          { name: service.title, path: `/services/${slug}` },
+        ])}
+      />
+      <JsonLd
+        data={generateWebPageSchema(metaTitle, metaDescription, `/services/${slug}`)}
+      />
 
       <section className="relative overflow-hidden text-white">
         <Image
-          src={getServiceImage(slug)}
-          alt=""
+          src={serviceImage}
+          alt={`${service.title} — UCBS UK business consultancy service`}
           fill
           priority
           className="object-cover object-center"
           sizes="100vw"
-          aria-hidden="true"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/70" />
 
