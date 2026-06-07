@@ -30,7 +30,7 @@ export function PaymentSolutionsDna() {
       <div className="page-container">
         <div className="mb-12 max-w-3xl sm:mb-16">
           <h2 className="text-2xl font-bold leading-tight text-[#1a1a2e] sm:text-3xl lg:text-4xl">
-            Payment Solutions are in our DNA
+            Payment Solutions are in our BLOOD
           </h2>
           <p className="mt-3 text-base text-slate-500 sm:text-lg">
             Everything your business needs to accept, manage and monitor your payments
