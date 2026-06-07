@@ -6,7 +6,7 @@ const PAYMENT_OPTIONS = [
     title: "Card Machines",
     description:
       "Fast, secure card machines for every business type: retail, hospitality, or mobile.",
-    image: "/namefast-sizel.svg",
+    image: "/online-payments.webp",
     href: "/services/merchant-services",
   },
   {

@@ -13,6 +13,7 @@ import {
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/service-card";
 import { PaymentOptions } from "@/components/ui/payment-options";
+import { PaymentSolutionsDna } from "@/components/ui/payment-solutions-dna";
 import { SERVICES_DATA } from "@/lib/services-data";
 
 const TESTIMONIALS = [
@@ -207,6 +208,8 @@ export default function HomePage() {
       </section>
 
       <PaymentOptions />
+
+      <PaymentSolutionsDna />
 
       {/* Services */}
       <section className="section-padding bg-background">

@@ -16,7 +16,6 @@ export const Footer: React.FC = () => {
 
   const companyLinks = [
     { name: "About Us", href: "/about" },
-    { name: "Latest News / Blog", href: "/blog" },
     { name: "Contact Support", href: "/contact" },
   ];
 
