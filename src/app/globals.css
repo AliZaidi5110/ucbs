@@ -226,3 +226,41 @@ select:focus-visible {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Finance calculator sliders */
+.finance-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 9999px;
+  background: #2563eb;
+  outline: none;
+}
+
+.finance-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgb(37 99 235 / 0.4);
+  cursor: pointer;
+}
+
+.finance-slider::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #2563eb;
+  border: 3px solid #ffffff;
+  box-shadow: 0 1px 4px rgb(37 99 235 / 0.4);
+  cursor: pointer;
+}
+
+.finance-slider::-moz-range-track {
+  height: 4px;
+  border-radius: 9999px;
+  background: #2563eb;
+}

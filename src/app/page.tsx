@@ -15,6 +15,7 @@ import { ServiceCard } from "@/components/ui/service-card";
 import { PaymentOptions } from "@/components/ui/payment-options";
 import { PaymentSolutionsDna } from "@/components/ui/payment-solutions-dna";
 import { DriveBusinessForward } from "@/components/ui/drive-business-forward";
+import { BusinessFinanceSection } from "@/components/ui/business-finance-section";
 import { SERVICES_DATA } from "@/lib/services-data";
 
 const TESTIMONIALS = [
@@ -213,6 +214,8 @@ export default function HomePage() {
       <PaymentSolutionsDna />
 
       <DriveBusinessForward />
+
+      <BusinessFinanceSection />
 
       {/* Services */}
       <section className="section-padding bg-background">
