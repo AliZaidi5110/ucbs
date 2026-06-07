@@ -15,9 +15,9 @@ const PAYMENT_OPTIONS = [
     title: "Online payments",
     description:
       "Seamlessly accept secure online payments on your website or e-commerce store anytime.",
-    image: "/img-1.jpg",
-    alt: "Secure digital payment at point of sale",
-    imageClassName: "max-h-[200px] sm:max-h-[220px] rounded-xl object-cover",
+    image: "/online-payments.webp",
+    alt: "Secure online card payment terminal",
+    imageClassName: "max-h-[200px] sm:max-h-[220px]",
     containerClassName: "min-h-[200px] sm:min-h-[220px]",
   },
   {
@@ -25,9 +25,10 @@ const PAYMENT_OPTIONS = [
     description:
       "Streamline operations with POS systems that integrate perfectly with your card machines.",
     image: "/epos.png",
-    alt: "UCBS ePOS system with touchscreen and receipt printer",
-    imageClassName: "max-h-[240px] sm:max-h-[260px]",
-    containerClassName: "min-h-[220px] sm:min-h-[240px] bg-gradient-to-b from-slate-50 to-white px-2 pt-4",
+    alt: "UCBS ePOS system with touchscreen monitor and receipt printer",
+    imageClassName: "max-h-[250px] sm:max-h-[280px]",
+    containerClassName:
+      "min-h-[230px] sm:min-h-[260px] rounded-2xl bg-white px-3 pb-2 pt-4 ring-1 ring-slate-100",
   },
 ];
 
@@ -51,7 +52,7 @@ export function PaymentOptions() {
                   aria-hidden="true"
                 />
                 <div
-                  className={`relative flex items-end justify-center overflow-hidden rounded-xl ${option.containerClassName}`}
+                  className={`relative flex items-end justify-center overflow-hidden ${option.containerClassName}`}
                 >
                   <div
                     className="absolute bottom-2 left-1/2 h-6 w-[88%] -translate-x-1/2 rounded-[50%] bg-[#dbeafe]/90 blur-[2px]"
@@ -61,7 +62,7 @@ export function PaymentOptions() {
                     src={option.image}
                     alt={option.alt}
                     width={300}
-                    height={260}
+                    height={280}
                     className={`relative z-[1] h-auto w-full object-contain object-bottom transition-transform duration-300 group-hover:scale-[1.03] ${option.imageClassName}`}
                   />
                 </div>
