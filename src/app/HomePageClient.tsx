@@ -50,6 +50,8 @@ export function HomePageClient() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+  const [videoReady, setVideoReady] = useState(false);
+  const [heroStill, setHeroStill] = useState("/img-1.jpg");
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -60,15 +62,58 @@ export function HomePageClient() {
       return;
     }
 
-    const playVideo = () => {
+    const captureStill = () => {
+      if (!video.videoWidth || !video.videoHeight) return;
+
+      const canvas = document.createElement("canvas");
+      canvas.width = video.videoWidth;
+      canvas.height = video.videoHeight;
+      const ctx = canvas.getContext("2d");
+      if (!ctx) return;
+
+      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
+      setHeroStill(canvas.toDataURL("image/jpeg", 0.85));
+    };
+
+    const startPlayback = () => {
+      setVideoReady(true);
       video.play().catch(() => {});
     };
 
-    playVideo();
-    video.addEventListener("loadeddata", playVideo);
+    const prepareVideo = () => {
+      const seekTime = video.duration > 1 ? 0.75 : 0;
+
+      const resetAndPlay = () => {
+        const onReset = () => {
+          startPlayback();
+          video.removeEventListener("seeked", onReset);
+        };
+        video.addEventListener("seeked", onReset);
+        video.currentTime = 0;
+      };
+
+      if (seekTime > 0) {
+        const onSeeked = () => {
+          captureStill();
+          resetAndPlay();
+          video.removeEventListener("seeked", onSeeked);
+        };
+        video.addEventListener("seeked", onSeeked);
+        video.currentTime = seekTime;
+      } else {
+        captureStill();
+        startPlayback();
+      }
+    };
+
+    if (video.readyState >= 2) {
+      prepareVideo();
+    } else {
+      video.addEventListener("canplay", prepareVideo, { once: true });
+    }
 
     return () => {
-      video.removeEventListener("loadeddata", playVideo);
+      video.removeEventListener("canplay", prepareVideo);
     };
   }, [shouldReduceMotion]);
 
@@ -107,25 +152,55 @@ export function HomePageClient() {
 
   return (
     <div className="relative w-full">
-      <section className="relative min-h-[520px] overflow-hidden text-white sm:min-h-[560px] lg:min-h-[620px]" aria-label="Hero">
-        <video
-          ref={heroVideoRef}
-          className="absolute inset-0 h-full w-full object-cover object-center"
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          poster="/logo.png"
+      <section className="relative min-h-[520px] overflow-hidden bg-[#0a2540] text-white sm:min-h-[560px] lg:min-h-[620px]" aria-label="Hero">
+        {/* Fallback still — matches video tone before playback and for reduced motion */}
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-out"
+          style={{
+            backgroundImage: `url(${heroStill})`,
+            opacity: shouldReduceMotion || !videoReady ? 1 : 0,
+          }}
           aria-hidden="true"
-        >
-          <source src="/Untitled-3.mp4" type="video/mp4" />
-        </video>
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/75 to-brand-navy/50" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/50 via-transparent to-brand-navy/25" aria-hidden="true" />
+        />
+
+        {!shouldReduceMotion && (
+          <video
+            ref={heroVideoRef}
+            className={`absolute inset-0 h-full w-full scale-105 object-cover object-center transition-opacity duration-1000 ease-out ${
+              videoReady ? "opacity-100" : "opacity-0"
+            }`}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            poster={heroStill.startsWith("data:") ? heroStill : "/img-1.jpg"}
+            aria-hidden="true"
+          >
+            <source src="/Untitled-3.mp4" type="video/mp4" />
+          </video>
+        )}
+
+        {/* Soft edge vignette — keeps video visible in the centre */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(10,37,64,0.45)_100%)]"
+          aria-hidden="true"
+        />
+
+        {/* Left-side readability scrim only — right side stays clear */}
+        <div
+          className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0a2540]/80 via-[#0a2540]/35 to-transparent lg:via-[#0a2540]/20"
+          aria-hidden="true"
+        />
+
+        {/* Bottom blend into next section */}
+        <div
+          className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a2540]/70 to-transparent sm:h-28"
+          aria-hidden="true"
+        />
 
         <div className="page-container relative z-10 flex min-h-[520px] items-center py-12 sm:min-h-[560px] sm:py-16 lg:min-h-[620px] lg:py-20">
-          <div className="max-w-2xl">
+          <div className="max-w-2xl rounded-2xl border border-white/10 bg-[#0a2540]/25 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.25)] backdrop-blur-md sm:p-8 lg:bg-[#0a2540]/20 lg:backdrop-blur-sm">
             <AnimatePresence mode="wait">
               <motion.div
                 key={activeSlide}
