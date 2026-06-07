@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import { JsonLd, generateServiceSchema } from "@/components/seo/json-ld";
+import { getServiceImage } from "@/lib/services-data";
 import {
   Zap,
   CreditCard,
@@ -205,8 +206,19 @@ export default async function ServiceDetailPage({ params }: Props) {
     <div className="bg-background">
       <JsonLd data={serviceSchema} />
 
-      <section className="bg-gradient-to-br from-brand-navy via-[#0f4c75] to-[#0a2540] text-white">
-        <div className="page-container py-10 sm:py-14">
+      <section className="relative overflow-hidden text-white">
+        <Image
+          src={getServiceImage(slug)}
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/85 to-brand-navy/70" />
+
+        <div className="page-container relative z-10 py-10 sm:py-14">
           <nav className="mb-6 text-sm font-medium text-slate-300" aria-label="Breadcrumb">
             <ol className="flex flex-wrap items-center gap-2">
               <li><Link href="/" className="hover:text-white">Home</Link></li>

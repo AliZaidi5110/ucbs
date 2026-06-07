@@ -222,6 +222,7 @@ export default function HomePage() {
                 description={service.description}
                 icon={service.icon}
                 href={service.href}
+                image={service.image}
                 index={index}
               />
             ))}
