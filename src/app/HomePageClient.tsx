@@ -50,8 +50,6 @@ export function HomePageClient() {
   const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
-  const [videoReady, setVideoReady] = useState(false);
-  const [heroStill, setHeroStill] = useState("/img-1.jpg");
 
   useEffect(() => {
     const video = heroVideoRef.current;
@@ -62,58 +60,18 @@ export function HomePageClient() {
       return;
     }
 
-    const captureStill = () => {
-      if (!video.videoWidth || !video.videoHeight) return;
-
-      const canvas = document.createElement("canvas");
-      canvas.width = video.videoWidth;
-      canvas.height = video.videoHeight;
-      const ctx = canvas.getContext("2d");
-      if (!ctx) return;
-
-      ctx.drawImage(video, 0, 0, canvas.width, canvas.height);
-      setHeroStill(canvas.toDataURL("image/jpeg", 0.85));
-    };
-
-    const startPlayback = () => {
-      setVideoReady(true);
+    const playVideo = () => {
       video.play().catch(() => {});
     };
 
-    const prepareVideo = () => {
-      const seekTime = video.duration > 1 ? 0.75 : 0;
-
-      const resetAndPlay = () => {
-        const onReset = () => {
-          startPlayback();
-          video.removeEventListener("seeked", onReset);
-        };
-        video.addEventListener("seeked", onReset);
-        video.currentTime = 0;
-      };
-
-      if (seekTime > 0) {
-        const onSeeked = () => {
-          captureStill();
-          resetAndPlay();
-          video.removeEventListener("seeked", onSeeked);
-        };
-        video.addEventListener("seeked", onSeeked);
-        video.currentTime = seekTime;
-      } else {
-        captureStill();
-        startPlayback();
-      }
-    };
-
     if (video.readyState >= 2) {
-      prepareVideo();
+      playVideo();
     } else {
-      video.addEventListener("canplay", prepareVideo, { once: true });
+      video.addEventListener("canplay", playVideo, { once: true });
     }
 
     return () => {
-      video.removeEventListener("canplay", prepareVideo);
+      video.removeEventListener("canplay", playVideo);
     };
   }, [shouldReduceMotion]);
 
@@ -153,33 +111,18 @@ export function HomePageClient() {
   return (
     <div className="relative w-full">
       <section className="relative min-h-[520px] overflow-hidden bg-[#0a2540] text-white sm:min-h-[560px] lg:min-h-[620px]" aria-label="Hero">
-        {/* Fallback still — matches video tone before playback and for reduced motion */}
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1000 ease-out"
-          style={{
-            backgroundImage: `url(${heroStill})`,
-            opacity: shouldReduceMotion || !videoReady ? 1 : 0,
-          }}
+        <video
+          ref={heroVideoRef}
+          className="absolute inset-0 h-full w-full scale-105 object-cover object-center"
+          autoPlay={!shouldReduceMotion}
+          muted
+          loop
+          playsInline
+          preload="auto"
           aria-hidden="true"
-        />
-
-        {!shouldReduceMotion && (
-          <video
-            ref={heroVideoRef}
-            className={`absolute inset-0 h-full w-full scale-105 object-cover object-center transition-opacity duration-1000 ease-out ${
-              videoReady ? "opacity-100" : "opacity-0"
-            }`}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="auto"
-            poster={heroStill.startsWith("data:") ? heroStill : "/img-1.jpg"}
-            aria-hidden="true"
-          >
-            <source src="/Untitled-3.mp4" type="video/mp4" />
-          </video>
-        )}
+        >
+          <source src="/Untitled-3.mp4" type="video/mp4" />
+        </video>
 
         {/* Soft edge vignette — keeps video visible in the centre */}
         <div
