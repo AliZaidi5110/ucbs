@@ -2,6 +2,7 @@ import React from "react";
 import { Metadata } from "next";
 import { Building, Landmark, ShieldCheck, Users, History } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
+import { ReadyToDriveForward } from "@/components/ui/ready-to-drive-forward";
 
 export const metadata: Metadata = {
   title: "About Us | Company Story & Credentials",
@@ -100,6 +101,8 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+
+      <ReadyToDriveForward />
 
       <section className="section-padding bg-background">
         <div className="page-container space-y-8">
