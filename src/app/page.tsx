@@ -86,99 +86,85 @@ export default function HomePage() {
   return (
     <div className="relative w-full">
       {/* Hero */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-brand-navy via-[#0f4c75] to-[#0a2540] text-white">
-        <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-20 right-0 h-80 w-80 rounded-full bg-brand-orange/20 blur-3xl" />
-          <div className="absolute bottom-0 left-0 h-80 w-80 rounded-full bg-brand-sky/20 blur-3xl" />
-        </div>
+      <section className="relative min-h-[520px] overflow-hidden text-white sm:min-h-[560px] lg:min-h-[620px]">
+        <Image
+          src="/img-1.jpg"
+          alt=""
+          fill
+          priority
+          className="object-cover object-center"
+          sizes="100vw"
+          aria-hidden="true"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/55" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-brand-navy/20" />
 
-        <div className="page-container relative z-10 py-12 sm:py-16 lg:py-20">
-          <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16">
-            <div>
-              <AnimatePresence mode="wait">
-                <motion.div
-                  key={activeSlide}
-                  initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
-                  transition={{ duration: 0.35 }}
-                >
-                  <span className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-200">
-                    {heroSlides[activeSlide].badge}
-                  </span>
-                  <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-5xl">
-                    {heroSlides[activeSlide].title}
-                  </h1>
-                  <p className="mt-3 text-lg font-semibold text-sky-200 sm:text-xl">
-                    {heroSlides[activeSlide].subtitle}
-                  </p>
-                  <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg">
-                    {heroSlides[activeSlide].description}
-                  </p>
-                  <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
-                    <Link href={heroSlides[activeSlide].ctaHref} className="btn-accent w-full sm:w-auto">
-                      {heroSlides[activeSlide].ctaText}
-                    </Link>
-                    <Link
-                      href="/services"
-                      className="inline-flex min-h-[2.75rem] w-full items-center justify-center rounded-lg border border-white/30 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto"
-                    >
-                      Explore Services
-                    </Link>
-                  </div>
-                </motion.div>
-              </AnimatePresence>
-
-              <div className="mt-10 flex items-center gap-4">
-                <button
-                  type="button"
-                  onClick={prevSlide}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white transition-colors hover:bg-white/15"
-                  aria-label="Previous slide"
-                >
-                  <ChevronLeft className="h-5 w-5" />
-                </button>
-                <div className="flex gap-2">
-                  {heroSlides.map((_, i) => (
-                    <button
-                      key={i}
-                      type="button"
-                      onClick={() => setActiveSlide(i)}
-                      className={`h-2 rounded-full transition-all ${
-                        i === activeSlide ? "w-8 bg-brand-orange" : "w-2 bg-white/30 hover:bg-white/50"
-                      }`}
-                      aria-label={`Go to slide ${i + 1}`}
-                    />
-                  ))}
+        <div className="page-container relative z-10 flex min-h-[520px] items-center py-12 sm:min-h-[560px] sm:py-16 lg:min-h-[620px] lg:py-20">
+          <div className="max-w-2xl">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={activeSlide}
+                initial={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={shouldReduceMotion ? { opacity: 0 } : { opacity: 0, y: -16 }}
+                transition={{ duration: 0.35 }}
+              >
+                <span className="mb-4 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-1.5 text-xs font-bold uppercase tracking-wider text-sky-200">
+                  {heroSlides[activeSlide].badge}
+                </span>
+                <h1 className="text-3xl font-black leading-tight tracking-tight sm:text-4xl lg:text-5xl">
+                  {heroSlides[activeSlide].title}
+                </h1>
+                <p className="mt-3 text-lg font-semibold text-sky-200 sm:text-xl">
+                  {heroSlides[activeSlide].subtitle}
+                </p>
+                <p className="mt-4 max-w-xl text-base leading-relaxed text-slate-200 sm:text-lg">
+                  {heroSlides[activeSlide].description}
+                </p>
+                <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center">
+                  <Link href={heroSlides[activeSlide].ctaHref} className="btn-accent w-full sm:w-auto">
+                    {heroSlides[activeSlide].ctaText}
+                  </Link>
+                  <Link
+                    href="/services"
+                    className="inline-flex min-h-[2.75rem] w-full items-center justify-center rounded-lg border border-white/30 px-6 py-2.5 text-sm font-bold text-white transition-colors hover:bg-white/10 sm:w-auto"
+                  >
+                    Explore Services
+                  </Link>
                 </div>
-                <button
-                  type="button"
-                  onClick={nextSlide}
-                  className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white transition-colors hover:bg-white/15"
-                  aria-label="Next slide"
-                >
-                  <ChevronRight className="h-5 w-5" />
-                </button>
-              </div>
-            </div>
+              </motion.div>
+            </AnimatePresence>
 
-            <div className="hidden lg:flex lg:justify-end">
-              <div className="relative w-full max-w-md">
-                <div className="absolute -inset-4 rounded-2xl bg-gradient-to-br from-brand-orange/30 to-brand-sky/30 blur-2xl" />
-                <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-black/30 p-6 backdrop-blur-sm">
-                  <Image
-                    src="/logo.png"
-                    alt="UCBS Utility Concepts Business Solutions"
-                    width={400}
-                    height={120}
-                    className="mx-auto h-auto w-full max-w-sm object-contain"
-                    priority
+            <div className="mt-10 flex items-center gap-4">
+              <button
+                type="button"
+                onClick={prevSlide}
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white transition-colors hover:bg-white/15"
+                aria-label="Previous slide"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+              <div className="flex gap-2">
+                {heroSlides.map((_, i) => (
+                  <button
+                    key={i}
+                    type="button"
+                    onClick={() => setActiveSlide(i)}
+                    className={`h-2 rounded-full transition-all ${
+                      i === activeSlide ? "w-8 bg-brand-orange" : "w-2 bg-white/30 hover:bg-white/50"
+                    }`}
+                    aria-label={`Go to slide ${i + 1}`}
                   />
-                  <p className="mt-4 text-center text-sm font-medium text-slate-300">
-                    Trusted UK business utility &amp; cost optimisation specialists
-                  </p>
-                </div>
+                ))}
               </div>
+              <button
+                type="button"
+                onClick={nextSlide}
+                className="flex h-10 w-10 items-center justify-center rounded-lg border border-white/20 bg-white/5 text-white transition-colors hover:bg-white/15"
+                aria-label="Next slide"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
             </div>
           </div>
         </div>
