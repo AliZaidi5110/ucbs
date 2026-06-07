@@ -6,7 +6,7 @@ import { PageHero } from "@/components/ui/page-hero";
 
 export const metadata: Metadata = {
   title: "Our Services | Utility, Banking, and Business Audits",
-  description: "Browse the 10 utility and cost optimization services offered by UCBS Ltd to UK businesses, including energy, card payments, telecoms, waste, and solar.",
+  description: "Browse the utility and cost optimization services offered by UCBS Ltd to UK businesses, including energy, card payments, telecoms, waste, and water.",
 };
 
 export default function ServicesPage() {
@@ -14,7 +14,7 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Brokerage Solutions"
-        title="10 Enterprise Solutions to Support Your Business"
+        title="Enterprise Solutions to Support Your Business"
         description="We provide comprehensive cost reviews and contract management at no upfront charge. Browse our key services below to start saving."
       />
 

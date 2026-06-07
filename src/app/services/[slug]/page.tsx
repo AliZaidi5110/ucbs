@@ -11,9 +11,6 @@ import {
   Coins,
   Trash2,
   Droplet,
-  ShieldCheck,
-  Building2,
-  Sun,
   Laptop,
   CheckCircle2,
   ArrowRight,
@@ -24,7 +21,7 @@ interface Props {
   params: Promise<{ slug: string }>;
 }
 
-// Full 10 services data set
+// Full services data set
 const DETAILS_MAP: Record<
   string,
   {
@@ -145,60 +142,6 @@ const DETAILS_MAP: Record<
       "Claim rebate and adjust future billing rates.",
     ],
   },
-  "business-insurance": {
-    title: "Tailored Business Insurance",
-    badge: "Asset Protection",
-    icon: ShieldCheck,
-    summary: "Match with liability, indemnity, and commercial property policies to insulate operations.",
-    details:
-      "A standard policy might leave you exposed. We identify your industry exposures to recommend indemnity packages, public liability policies, and commercial property insurance tailored to your business risk profile.",
-    benefits: [
-      "Custom policy options for professional services and manufacturing",
-      "Protection for key personnel, tools, and business interruption",
-      "Comparison across major UK A-rated commercial underwriters",
-    ],
-    process: [
-      "Detail your industry operations and asset inventory values.",
-      "Evaluate existing coverage limits to locate exposures.",
-      "Review selected insurance policy proposals.",
-    ],
-  },
-  "business-banking": {
-    title: "Commercial Business Banking",
-    badge: "Corporate Finance",
-    icon: Building2,
-    summary: "Locate low-fee business current accounts and merchant accounts optimized for high-volume transactions.",
-    details:
-      "Monthly transaction fees and platform costs add up. We guide businesses toward banking partners offering long-term free banking periods, competitive integration APIs, and higher interest rates on treasury reserves.",
-    benefits: [
-      "Introductions to traditional high-street and modern challenger banks",
-      "Streamlined opening procedures for complex corporate entities",
-      "High-yield business deposit accounts to grow cash holdings",
-    ],
-    process: [
-      "Evaluate monthly transaction counts and foreign exchange needs.",
-      "We recommend accounts matching your corporate needs.",
-      "Prepare application packages for onboarding.",
-    ],
-  },
-  "solar-ev-charging": {
-    title: "Solar & EV Charging Infrastructure",
-    badge: "Green Infrastructure",
-    icon: Sun,
-    summary: "On-site commercial solar generation and EV charging points to future-proof business properties.",
-    details:
-      "Cut grid dependence and power your business cleanly. We plan commercial solar roof setups and install workplace EV charging points. This supports sustainability initiatives and can generate extra revenue from customer parking.",
-    benefits: [
-      "Substantial reduction in long-term electricity import costs",
-      "Workplace charge points with smart billing and fleet software",
-      "Capital allowances and green energy tax benefits available",
-    ],
-    process: [
-      "Execute roof structure mapping and grid connection checks.",
-      "Draft solar output forecasts and EV charger load plans.",
-      "Coordinate MCS-certified installation and software setup.",
-    ],
-  },
   "digital-marketing": {
     title: "Digital Marketing & Web Design",
     badge: "Web Solutions",
@@ -219,7 +162,7 @@ const DETAILS_MAP: Record<
   },
 };
 
-// Generate static routes for all 10 services
+// Generate static routes for all services
 export async function generateStaticParams() {
   return Object.keys(DETAILS_MAP).map((slug) => ({
     slug: slug,

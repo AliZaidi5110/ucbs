@@ -5,16 +5,6 @@ import Link from "next/link";
 import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
-  Zap,
-  CreditCard,
-  Wifi,
-  Coins,
-  Trash2,
-  Droplet,
-  ShieldCheck,
-  Building2,
-  Sun,
-  Laptop,
   ChevronLeft,
   ChevronRight,
   TrendingDown,
@@ -22,69 +12,8 @@ import {
   CheckCircle,
 } from "lucide-react";
 import { ServiceCard } from "@/components/ui/service-card";
-
-const SERVICES_DATA = [
-  {
-    title: "Business Energy",
-    description: "Compare electricity and gas tariffs from top UK providers. Reduce overhead costs with customized long-term energy plans.",
-    icon: Zap,
-    href: "/services/business-energy",
-  },
-  {
-    title: "Merchant Services",
-    description: "Get competitive card terminal rates, online gateways, and mobile pay setups. Boost checkout speed and lower transaction fees.",
-    icon: CreditCard,
-    href: "/services/merchant-services",
-  },
-  {
-    title: "Broadband & Telecoms",
-    description: "Enterprise-grade Full Fibre internet, dedicated lines, and cloud-hosted VoIP phone systems designed for team collaboration.",
-    icon: Wifi,
-    href: "/services/broadband-telecoms",
-  },
-  {
-    title: "Business Funding",
-    description: "Connect with leading UK lenders for working capital, equipment leasing, and asset finance to accelerate business growth.",
-    icon: Coins,
-    href: "/services/business-funding",
-  },
-  {
-    title: "Waste Management",
-    description: "Compliant and cost-efficient waste collection, hazardous waste disposal, and commercial recycling audits.",
-    icon: Trash2,
-    href: "/services/waste-management",
-  },
-  {
-    title: "Water Bills",
-    description: "Water usage auditing and consolidation reviews to trace billing discrepancies and save up to 20% on commercial rates.",
-    icon: Droplet,
-    href: "/services/water-bills",
-  },
-  {
-    title: "Business Insurance",
-    description: "Tailored professional indemnity, public liability, and commercial property policies to safeguard corporate assets.",
-    icon: ShieldCheck,
-    href: "/services/business-insurance",
-  },
-  {
-    title: "Business Banking",
-    description: "Find high-yield business accounts and low-fee commercial current accounts suitable for your transaction volume.",
-    icon: Building2,
-    href: "/services/business-banking",
-  },
-  {
-    title: "Solar & EV Charging",
-    description: "Commercial solar panels and on-site electric vehicle charging infrastructure to power operations sustainably.",
-    icon: Sun,
-    href: "/services/solar-ev-charging",
-  },
-  {
-    title: "Digital Marketing & Web",
-    description: "Custom web development, local SEO optimization, and target marketing campaigns to scale your digital presence.",
-    icon: Laptop,
-    href: "/services/digital-marketing",
-  },
-];
+import { PaymentOptions } from "@/components/ui/payment-options";
+import { SERVICES_DATA } from "@/lib/services-data";
 
 const TESTIMONIALS = [
   {
@@ -136,12 +65,12 @@ export default function HomePage() {
       badge: "Business Growth Support",
     },
     {
-      title: "Sustainable Power & Smart Telecoms",
-      subtitle: "Commercial Solar & EV Charging Infrastructure",
-      description: "Transition to carbon-neutral solar installations and install EV fleet chargers while modernizing your VoIP network.",
-      ctaText: "View Eco Services",
-      ctaHref: "/services/solar-ev-charging",
-      badge: "Green Infrastructure & Telecoms",
+      title: "Smarter Payments for Every Channel",
+      subtitle: "Card Machines, Online & ePOS Solutions",
+      description: "Accept payments in-store, online, and at the till with integrated card machines, payment gateways, and ePOS systems tailored to your business.",
+      ctaText: "View Payment Solutions",
+      ctaHref: "/services/merchant-services",
+      badge: "Merchant Services",
     },
   ];
 
@@ -277,6 +206,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <PaymentOptions />
+
       {/* Services */}
       <section className="section-padding bg-background">
         <div className="page-container">
@@ -284,7 +215,7 @@ export default function HomePage() {
             <span className="eyebrow">What We Do</span>
             <h2 className="heading-section mt-2">Our Cost Optimisation Services</h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-              We audit your ongoing overhead operations to unlock hidden cost-efficiencies across 10 key business areas.
+              We audit your ongoing overhead operations to unlock hidden cost-efficiencies across 7 key business areas.
             </p>
           </div>
 

@@ -58,9 +58,6 @@ export const ContactForm: React.FC = () => {
     "Business Funding (Loans / Asset Finance)",
     "Waste Management & Recycling",
     "Water Bills & Consolidation Audits",
-    "Business Insurance",
-    "Business Banking Accounts",
-    "Solar Panels & EV Charging Infrastructure",
     "Web & Digital Marketing Consultation",
   ];
 
