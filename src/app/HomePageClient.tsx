@@ -1,8 +1,7 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import {
   ChevronLeft,
@@ -48,8 +47,30 @@ const STATS = [
 
 export function HomePageClient() {
   const shouldReduceMotion = useReducedMotion();
+  const heroVideoRef = useRef<HTMLVideoElement>(null);
   const [activeSlide, setActiveSlide] = useState(0);
   const [activeTestimonial, setActiveTestimonial] = useState(0);
+
+  useEffect(() => {
+    const video = heroVideoRef.current;
+    if (!video) return;
+
+    if (shouldReduceMotion) {
+      video.pause();
+      return;
+    }
+
+    const playVideo = () => {
+      video.play().catch(() => {});
+    };
+
+    playVideo();
+    video.addEventListener("loadeddata", playVideo);
+
+    return () => {
+      video.removeEventListener("loadeddata", playVideo);
+    };
+  }, [shouldReduceMotion]);
 
   const heroSlides = [
     {
@@ -87,16 +108,21 @@ export function HomePageClient() {
   return (
     <div className="relative w-full">
       <section className="relative min-h-[520px] overflow-hidden text-white sm:min-h-[560px] lg:min-h-[620px]" aria-label="Hero">
-        <Image
-          src="/img-1.jpg"
-          alt="UK business professionals reviewing utility and payment savings with UCBS consultants"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/95 via-brand-navy/80 to-brand-navy/55" aria-hidden="true" />
-        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/40 via-transparent to-brand-navy/20" aria-hidden="true" />
+        <video
+          ref={heroVideoRef}
+          className="absolute inset-0 h-full w-full object-cover object-center"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/logo.png"
+          aria-hidden="true"
+        >
+          <source src="/Untitled-3.mp4" type="video/mp4" />
+        </video>
+        <div className="absolute inset-0 bg-gradient-to-r from-brand-navy/90 via-brand-navy/75 to-brand-navy/50" aria-hidden="true" />
+        <div className="absolute inset-0 bg-gradient-to-t from-brand-navy/50 via-transparent to-brand-navy/25" aria-hidden="true" />
 
         <div className="page-container relative z-10 flex min-h-[520px] items-center py-12 sm:min-h-[560px] sm:py-16 lg:min-h-[620px] lg:py-20">
           <div className="max-w-2xl">

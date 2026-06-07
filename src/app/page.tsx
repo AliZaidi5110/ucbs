@@ -14,7 +14,7 @@ export const metadata = buildMetadata({
     "merchant card machines UK",
     "business telecoms broker Wales",
   ],
-  ogImage: "/img-1.jpg",
+  ogImage: "/logo.png",
 });
 
 export default function HomePage() {
