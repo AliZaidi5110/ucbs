@@ -42,13 +42,13 @@ export function BusinessFinanceSection() {
   }, [monthlySales, tradingIndex]);
 
   return (
-    <section className="section-padding bg-[#e8e4f3]">
+    <section className="section-padding bg-[#BAA2E2]">
       <div className="page-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
           {/* Calculator card */}
           <div className="rounded-2xl bg-white p-6 shadow-lg sm:p-8 lg:p-10">
             <div className="space-y-4">
-              <div className="rounded-xl bg-[#eef2ff] px-5 py-5 sm:px-6 sm:py-6">
+              <div className="rounded-xl bg-white/70 px-5 py-5 sm:px-6 sm:py-6">
                 <p className="text-sm text-slate-600">
                   How much do you take in sales each month?
                 </p>
@@ -67,7 +67,7 @@ export function BusinessFinanceSection() {
                 />
               </div>
 
-              <div className="rounded-xl bg-[#eef2ff] px-5 py-5 sm:px-6 sm:py-6">
+              <div className="rounded-xl bg-white/70 px-5 py-5 sm:px-6 sm:py-6">
                 <p className="text-sm text-slate-600">
                   For how long has your company been operating?
                 </p>
