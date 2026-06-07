@@ -1,5 +1,7 @@
 import React from "react";
+import { preload } from "react-dom";
 import { HomePageClient } from "./HomePageClient";
+import { HeroSection } from "@/components/home/hero-section";
 import { JsonLd, generateWebPageSchema, homeFaqSchema } from "@/components/seo/json-ld";
 import { buildMetadata, SITE } from "@/lib/seo";
 
@@ -18,6 +20,8 @@ export const metadata = buildMetadata({
 });
 
 export default function HomePage() {
+  preload("/Untitled-3.mp4", { as: "video", fetchPriority: "high" });
+
   return (
     <>
       <JsonLd data={homeFaqSchema} />
@@ -28,6 +32,7 @@ export default function HomePage() {
           "/"
         )}
       />
+      <HeroSection />
       <HomePageClient />
     </>
   );
