@@ -1,0 +1,34 @@
+datasource db {
+  provider = "sqlite" // We will use SQLite for portability and ease of testing, but it can be changed to postgresql
+  url      = "file:./dev.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model BlogPost {
+  id          String   @id @default(uuid())
+  slug        String   @unique
+  title       String
+  excerpt     String
+  content     String
+  category    String
+  publishedAt DateTime @default(now())
+  readTime    String
+  author      String
+  image       String
+  tags        String
+}
+
+model ContactSubmission {
+  id        String   @id @default(uuid())
+  name      String
+  email     String
+  phone     String
+  company   String
+  service   String
+  message   String
+  createdAt DateTime @default(now())
+  status    String   @default("pending")
+}
