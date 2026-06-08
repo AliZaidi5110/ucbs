@@ -19,14 +19,6 @@ export interface ServiceItem {
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
-    title: "Business Energy",
-    description:
-      "Compare electricity and gas tariffs from top UK providers. Reduce overhead costs with customized long-term energy plans.",
-    icon: Zap,
-    href: "/services/business-energy",
-    image: "/services/business-energy.jpg",
-  },
-  {
     title: "Merchant Services",
     description:
       "Get competitive card terminal rates, online gateways, and mobile pay setups. Boost checkout speed and lower transaction fees.",
@@ -35,20 +27,28 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: "/services/merchant-services.jpg",
   },
   {
+    title: "Business Funding",
+    description:
+      "Connect with leading UK lenders for working capital, equipment leasing, and asset funding. Loans available from 3+ months trading.",
+    icon: Coins,
+    href: "/services/business-funding",
+    image: "/services/business-funding.jpg",
+  },
+  {
+    title: "Business Energy",
+    description:
+      "Compare electricity and gas tariffs from top UK providers. Reduce overhead costs with customized long-term energy plans.",
+    icon: Zap,
+    href: "/services/business-energy",
+    image: "/services/business-energy.jpg",
+  },
+  {
     title: "Broadband & Telecoms",
     description:
       "Enterprise-grade Full Fibre internet, dedicated lines, and cloud-hosted VoIP phone systems designed for team collaboration.",
     icon: Wifi,
     href: "/services/broadband-telecoms",
     image: "/services/broadband-telecoms.jpg",
-  },
-  {
-    title: "Business Funding",
-    description:
-      "Connect with leading UK lenders for working capital, equipment leasing, and asset finance to accelerate business growth.",
-    icon: Coins,
-    href: "/services/business-funding",
-    image: "/services/business-funding.jpg",
   },
   {
     title: "Waste Management",

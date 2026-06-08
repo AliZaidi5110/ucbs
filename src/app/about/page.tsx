@@ -75,7 +75,7 @@ export default function AboutPage() {
                   UCBS serves as an intermediary brokerage. We compare rates from over 30 leading providers. Our clients receive clear, tailored comparison reviews, allowing them to make fast decisions to secure maximum cost savings.
                 </p>
                 <p>
-                  As an introducer to verified commercial finance providers, we also facilitate business growth by arranging working capital loans, asset leasebacks, and invoice factoring options without any upfront fees.
+                  As an introducer to verified commercial funding providers, we also facilitate business growth by arranging working capital loans, asset leasebacks, and invoice factoring options without any upfront fees.
                 </p>
               </div>
             </div>
@@ -128,41 +128,7 @@ export default function AboutPage() {
       <ReadyToDriveForward />
 
       <section className="section-padding bg-background">
-        <div className="page-container space-y-8">
-          <div className="surface-card p-6 sm:p-8">
-            <div className="grid items-center gap-8 lg:grid-cols-3">
-              <div>
-                <span className="eyebrow">Leadership</span>
-                <h2 className="mt-2 text-2xl font-black text-foreground">Board of Directors</h2>
-                <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-                  Our operations and strategic direction are overseen by executive directors with extensive utility and brokerage backgrounds.
-                </p>
-              </div>
-              <div className="grid gap-4 sm:grid-cols-2 lg:col-span-2">
-                <div className="rounded-xl border border-border bg-muted p-6">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-blue/10 text-lg font-bold text-brand-blue">
-                    HA
-                  </div>
-                  <h3 className="font-bold text-foreground">Himadhar Alahari</h3>
-                  <p className="text-xs font-bold uppercase tracking-wide text-brand-orange">Director & Founder</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Leads our merchant services audit team and coordinates key relationships with financial funding partners.
-                  </p>
-                </div>
-                <div className="rounded-xl border border-border bg-muted p-6">
-                  <div className="mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-brand-emerald/10 text-lg font-bold text-brand-emerald">
-                    UK
-                  </div>
-                  <h3 className="font-bold text-foreground">UK Advisory Team</h3>
-                  <p className="text-xs font-bold uppercase tracking-wide text-brand-blue">Consultation & Auditing</p>
-                  <p className="mt-2 text-sm text-muted-foreground">
-                    Our group of tariff analysts and support staff auditing client invoices daily.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
+        <div className="page-container">
           <div className="surface-card flex flex-col items-center justify-between gap-6 p-6 sm:flex-row sm:p-8">
             <div className="text-center sm:text-left">
               <span className="inline-block rounded-full bg-brand-emerald/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-brand-emerald">
@@ -170,7 +136,7 @@ export default function AboutPage() {
               </span>
               <h3 className="mt-2 text-lg font-bold text-foreground">Wales, United Kingdom</h3>
               <p className="mt-1 text-sm text-muted-foreground">
-                Utility Concepts Business Solutions Ltd, 12 Scotchwell View, Haverfordwest, Wales, SA61 2RE. Company No. 12948242.
+                Utility Concepts Business Solutions Ltd, 12 Scotchwell View, Haverfordwest, Wales, SA61 2RE. Company No. 12948242. We are ICO registered.
               </p>
             </div>
             <Building className="h-10 w-10 shrink-0 text-brand-blue" aria-hidden="true" />

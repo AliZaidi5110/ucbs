@@ -95,12 +95,12 @@ const DETAILS_MAP: Record<
     ],
   },
   "business-funding": {
-    title: "Business Funding & Finance",
+    title: "Business Funding",
     badge: "Growth Capital",
     icon: Coins,
-    summary: "Acts as a credit broker/introducer to leading UK finance providers for capital, stock, or equipment loans.",
+    summary: "Acts as a credit broker/introducer to leading UK funding providers for capital, stock, or equipment loans. Available from 3+ months trading.",
     details:
-      "Sourcing corporate capital can be challenging. As an introducer (not a lender), UCBS has links to a panel of commercial lenders. We organize asset finance, business credit lines, stock purchase bridging, and invoice factoring options.",
+      "Sourcing corporate capital can be challenging. As an introducer (not a lender), UCBS has links to a panel of commercial lenders. We organize asset funding, business credit lines, stock purchase bridging, and invoice factoring options. Funding is available for businesses with 3+ months trading history.",
     benefits: [
       "Flexible repayment terms matching your business cash flow cycles",
       "Equipment lease and hire purchase structures to preserve cash",
@@ -109,7 +109,7 @@ const DETAILS_MAP: Record<
     process: [
       "Discuss cash flow needs or asset funding objectives.",
       "Submit key accounts and documentation via secure channels.",
-      "Receive finance introductions and offers from approved lenders.",
+      "Receive funding introductions and offers from approved lenders.",
     ],
   },
   "waste-management": {

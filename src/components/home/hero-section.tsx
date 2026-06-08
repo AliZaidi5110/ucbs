@@ -15,24 +15,21 @@ export function HeroSection() {
         playsInline
         preload="auto"
         disablePictureInPicture
-        className="absolute inset-0 h-full w-full object-cover object-center"
+        className="absolute inset-0 h-full w-full object-cover object-center brightness-105 contrast-105"
         aria-hidden="true"
       >
         <source src="/Untitled-3.mp4" type="video/mp4" />
       </video>
 
+      {/* Light left scrim for text readability only */}
       <div
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_35%,rgba(10,37,64,0.45)_100%)]"
+        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0a2540]/55 via-[#0a2540]/15 to-transparent"
         aria-hidden="true"
       />
 
+      {/* Subtle bottom fade into next section */}
       <div
-        className="pointer-events-none absolute inset-0 bg-gradient-to-r from-[#0a2540]/80 via-[#0a2540]/35 to-transparent lg:via-[#0a2540]/20"
-        aria-hidden="true"
-      />
-
-      <div
-        className="pointer-events-none absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-[#0a2540]/70 to-transparent sm:h-28"
+        className="pointer-events-none absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#0a2540]/50 to-transparent sm:h-20"
         aria-hidden="true"
       />
 

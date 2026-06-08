@@ -37,7 +37,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Get In Touch"
         title="Connect with Our Advisors"
-        description="Find out how much your business can save. Fill out our free audit inquiry or contact our support desk directly."
+        description="Find out how much your business can save. Fill out our free quote enquiry or contact our support desk directly."
       />
 
       <section className="section-padding bg-background">

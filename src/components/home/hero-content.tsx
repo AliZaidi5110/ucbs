@@ -7,22 +7,22 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroSlides = [
   {
-    title: "Slash Business Utility Costs by Up to 35%",
-    subtitle: "Free Corporate Tariff & Payment Audits",
+    title: "One Stop Solution for All Your Merchant Services & Utility Needs",
+    subtitle: "Payments, Energy, Telecoms & Business Support",
     description:
-      "Our commercial specialists review your business energy, card terminals, and internet bills to secure premium rates.",
-    ctaText: "Get Free Audit",
+      "UCBS compares merchant services, utilities, funding, and telecoms for UK businesses — one trusted partner for every essential overhead.",
+    ctaText: "Request Free Quote",
     ctaHref: "/contact",
-    badge: "Commercial Utility Brokerage",
+    badge: "UCBS Ltd",
   },
   {
-    title: "Flexible Funding to Fuel Your Growth",
-    subtitle: "Unlocking Asset & Working Capital",
+    title: "Merchant Cash Advances & Loans for Small Business",
+    subtitle: "Funding From 3+ Months Trading",
     description:
-      "We act as a direct introducer to leading UK finance providers, securing working capital loans and equipment leasing options.",
-    ctaText: "Explore Funding",
-    ctaHref: "/services/business-funding",
-    badge: "Business Growth Support",
+      "We introduce small businesses to UK funding partners for merchant cash advances, working capital, and equipment funding — with flexible options from 3+ months trading.",
+    ctaText: "Request Free Quote",
+    ctaHref: "/contact",
+    badge: "Business Funding",
   },
   {
     title: "Smarter Payments for Every Channel",
@@ -51,7 +51,7 @@ export function HeroContent() {
 
   return (
     <div className="page-container relative z-10 flex min-h-[520px] items-center py-12 sm:min-h-[560px] sm:py-16 lg:min-h-[620px] lg:py-20">
-      <div className="max-w-2xl rounded-2xl border border-white/10 bg-[#0a2540]/25 p-6 shadow-[0_24px_80px_rgba(0,0,0,0.25)] backdrop-blur-md sm:p-8 lg:bg-[#0a2540]/20 lg:backdrop-blur-sm">
+      <div className="max-w-2xl rounded-2xl border border-white/15 bg-[#0a2540]/88 p-6 shadow-2xl sm:p-8">
         <AnimatePresence mode="wait">
           <motion.div
             key={activeSlide}

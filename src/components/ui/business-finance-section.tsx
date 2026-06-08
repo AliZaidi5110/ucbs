@@ -9,7 +9,8 @@ const SALES_MAX = 200000;
 const SALES_DEFAULT = 60000;
 
 const TRADING_OPTIONS = [
-  { label: "Under 6 months", multiplier: 0.5 },
+  { label: "Under 3 months", multiplier: 0.4 },
+  { label: "3+ months", multiplier: 0.85 },
   { label: "6+ months", multiplier: 1 },
   { label: "12+ months", multiplier: 1.1 },
   { label: "24+ months", multiplier: 1.2 },
@@ -18,8 +19,8 @@ const TRADING_OPTIONS = [
 
 const FEATURES = [
   ["Merchant Cash Advance", "Unsecured Business Loans"],
-  ["Revenue Based Finance", "Asset Based Finance"],
-  ["90% Approval Rates", "Available From 6+ Months Trading"],
+  ["Revenue Based Funding", "Asset Based Funding"],
+  ["90% Approval Rates", "Available From 3+ Months Trading"],
 ];
 
 function formatCurrency(value: number) {
@@ -45,7 +46,6 @@ export function BusinessFinanceSection() {
     <section className="section-padding bg-[#BAA2E2]">
       <div className="page-container">
         <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14 xl:gap-20">
-          {/* Calculator card */}
           <div className="rounded-2xl bg-white p-6 shadow-lg sm:p-8 lg:p-10">
             <div className="space-y-4">
               <div className="rounded-xl bg-white/70 px-5 py-5 sm:px-6 sm:py-6">
@@ -96,20 +96,19 @@ export function BusinessFinanceSection() {
 
             <p className="mt-5 text-center text-xs leading-relaxed text-slate-500">
               *Amounts and pricing may be subject to change, depending on your credit profile at
-              enquiry.
+              enquiry. Loans available from 3+ months trading.
             </p>
           </div>
 
-          {/* Content */}
           <div className="max-w-xl">
-            <p className="text-lg font-semibold text-[#2563eb] sm:text-xl">Business Finance</p>
+            <p className="text-lg font-semibold text-[#2563eb] sm:text-xl">Business Funding</p>
             <h2 className="mt-3 text-2xl font-bold leading-tight text-[#1a1a2e] sm:text-3xl lg:text-4xl">
               Fund Expansion. Improve Cashflow. Purchase Stock. Purchase Equipment.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
               Cash flow is the lifeblood of any business. And growth helps realise our visions. Our
-              innovative financing options offers you a practical and accessible way to access
-              capital with the flexibility you need.
+              innovative funding options offer you a practical and accessible way to access capital
+              with the flexibility you need.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">
@@ -135,7 +134,7 @@ export function BusinessFinanceSection() {
               href="/contact"
               className="mt-10 inline-flex min-h-[3rem] items-center justify-center rounded-lg bg-[#2563eb] px-8 text-base font-bold text-white shadow-md transition-colors hover:bg-[#1d4ed8]"
             >
-              Get Started
+              Request Free Quote
             </Link>
           </div>
         </div>

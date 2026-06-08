@@ -7,10 +7,10 @@ export const Footer: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   const servicesLinks = [
-    { name: "Business Energy", href: "/services/business-energy" },
     { name: "Merchant Services", href: "/services/merchant-services" },
-    { name: "Broadband & Telecoms", href: "/services/broadband-telecoms" },
     { name: "Business Funding", href: "/services/business-funding" },
+    { name: "Business Energy", href: "/services/business-energy" },
+    { name: "Broadband & Telecoms", href: "/services/broadband-telecoms" },
     { name: "Waste Management", href: "/services/waste-management" },
     { name: "Water Bills", href: "/services/water-bills" },
     { name: "Digital Marketing", href: "/services/digital-marketing" },
@@ -22,9 +22,9 @@ export const Footer: React.FC = () => {
   ];
 
   const legalLinks = [
-    { name: "Privacy Policy", href: "#" },
-    { name: "Terms of Use", href: "#" },
-    { name: "Cookie Statement", href: "#" },
+    { name: "Privacy Policy", href: "/privacy-policy" },
+    { name: "Terms of Use", href: "/terms-of-use" },
+    { name: "Cookie Statement", href: "/cookie-statement" },
   ];
 
   return (
@@ -42,7 +42,7 @@ export const Footer: React.FC = () => {
               />
             </Link>
             <p className="mt-5 text-sm leading-relaxed text-slate-400">
-              Utility Concepts Business Solutions delivers expert cost-saving and management services to SMEs across the United Kingdom.
+              Utility Concepts Business Solutions delivers expert cost-saving and management services to SMEs across the United Kingdom. We are ICO registered.
             </p>
             <div className="mt-6 space-y-3">
               <a
@@ -109,10 +109,10 @@ export const Footer: React.FC = () => {
           <div>
             <h4 className="mb-5 text-sm font-bold uppercase tracking-wider text-white">Compliance</h4>
             <p className="text-sm leading-relaxed text-slate-400">
-              <strong className="text-slate-300">Regulatory Status:</strong> UCBS acts as a credit broker/introducer, not a lender. We introduce clients to third-party finance providers.
+              <strong className="text-slate-300">Regulatory Status:</strong> UCBS acts as a credit broker/introducer, not a lender. We introduce clients to third-party funding providers.
             </p>
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
-              <strong className="text-slate-300">GDPR:</strong> We protect user data and only share details with verified partners to compile comparison options.
+              <strong className="text-slate-300">ICO Registered:</strong> We protect user data and only share details with verified partners to compile comparison options.
             </p>
           </div>
         </div>

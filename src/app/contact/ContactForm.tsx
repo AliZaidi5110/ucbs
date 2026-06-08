@@ -13,7 +13,7 @@ const contactSchema = z.object({
   email: z.string().email("Invalid email address"),
   phone: z.string().min(10, "Phone number must be at least 10 digits"),
   company: z.string().min(2, "Company name must be at least 2 characters"),
-  service: z.string().min(1, "Please select a service for audit"),
+  service: z.string().min(1, "Please select a service"),
   message: z.string().min(10, "Message must be at least 10 characters"),
 });
 
@@ -52,18 +52,18 @@ export const ContactForm: React.FC = () => {
   };
 
   const servicesList = [
-    "Business Energy (Electricity & Gas)",
     "Merchant Services (Card Terminals)",
+    "Business Funding (Loans / Asset Funding)",
+    "Business Energy (Electricity & Gas)",
     "Broadband & Telecoms (VoIP / Fibre)",
-    "Business Funding (Loans / Asset Finance)",
     "Waste Management & Recycling",
-    "Water Bills & Consolidation Audits",
+    "Water Bills & Consolidation Reviews",
     "Web & Digital Marketing Consultation",
   ];
 
   return (
     <div className="surface-card w-full p-6 sm:p-8">
-      <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">Request a Free Audit</h2>
+      <h2 className="mb-6 text-2xl font-bold text-foreground sm:text-3xl">Request a Free Quote</h2>
 
       {/* Dynamic Accessible Alert Message */}
       {submitResult && (
@@ -194,7 +194,7 @@ export const ContactForm: React.FC = () => {
         {/* Service Selector Dropdown */}
         <div>
           <label htmlFor="service" className="block text-[14px] font-bold text-foreground mb-[6px]">
-            Primary Service to Audit
+            Primary Service
           </label>
           <select
             id="service"
@@ -274,10 +274,10 @@ export const ContactForm: React.FC = () => {
           {isPending ? (
             <>
               <Loader2 className="w-5 h-5 mr-3 animate-spin" aria-hidden="true" />
-              Submitting Audit...
+              Submitting...
             </>
           ) : (
-            "Request Free Audit"
+            "Request Free Quote"
           )}
         </button>
       </form>

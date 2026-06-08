@@ -38,10 +38,10 @@ export const SITE = {
 } as const;
 
 export const SERVICE_SLUGS = [
-  "business-energy",
   "merchant-services",
-  "broadband-telecoms",
   "business-funding",
+  "business-energy",
+  "broadband-telecoms",
   "waste-management",
   "water-bills",
   "digital-marketing",
