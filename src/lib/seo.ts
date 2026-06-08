@@ -27,9 +27,13 @@ export const SITE = {
   ogImage: "/logo.png",
   twitterHandle: undefined as string | undefined,
   phone: "+44 1437 957009",
-  whatsapp: "+44 7768 805164",
-  whatsappDisplay: "+44 7768 805164",
+  whatsapp: "+44 7352 540222",
+  whatsappDisplay: "+44 7352 540222",
   email: "info@ucbsltd.co.uk",
+  social: {
+    facebook: "https://www.facebook.com/people/UCBS/61586632778661/",
+    instagram: "https://www.instagram.com/ucbs_uk",
+  },
   address: {
     street: "12 Scotchwell View",
     locality: "Haverfordwest",

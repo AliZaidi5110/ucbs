@@ -35,7 +35,7 @@ export const organizationSchema = {
     "@type": "Country",
     name: "United Kingdom",
   },
-  sameAs: [] as string[],
+  sameAs: [SITE.social.facebook, SITE.social.instagram],
 };
 
 export const localBusinessSchema = {
