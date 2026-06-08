@@ -27,6 +27,8 @@ export const SITE = {
   ogImage: "/logo.png",
   twitterHandle: undefined as string | undefined,
   phone: "+44 1437 957009",
+  whatsapp: "+44 7768 805164",
+  whatsappDisplay: "+44 7768 805164",
   email: "info@ucbsltd.co.uk",
   address: {
     street: "12 Scotchwell View",
@@ -36,6 +38,11 @@ export const SITE = {
     country: "GB",
   },
 } as const;
+
+export function getWhatsAppUrl(message = "Hello UCBS, I'd like a free quote.") {
+  const digits = SITE.whatsapp.replace(/\D/g, "");
+  return `https://wa.me/${digits}?text=${encodeURIComponent(message)}`;
+}
 
 export const SERVICE_SLUGS = [
   "merchant-services",

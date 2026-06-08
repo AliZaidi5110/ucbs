@@ -1,9 +1,9 @@
 import React from "react";
 import { ContactForm } from "./ContactForm";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react";
 import { PageHero } from "@/components/ui/page-hero";
 import { JsonLd, generateBreadcrumbSchema, generateWebPageSchema } from "@/components/seo/json-ld";
-import { buildMetadata } from "@/lib/seo";
+import { buildMetadata, getWhatsAppUrl, SITE } from "@/lib/seo";
 
 export const metadata = buildMetadata({
   title: "Contact UCBS Ltd | Free Business Cost Review",
@@ -56,7 +56,24 @@ export default function ContactPage() {
                       <a href="tel:+441437957009" className="mt-1 block font-semibold text-brand-blue hover:underline">
                         +44 (0) 1437 957009
                       </a>
-                      <p className="mt-1 text-xs text-muted-foreground">Local UK mobile: +44 7344 194027</p>
+                    </div>
+                  </div>
+
+                  <div className="flex gap-4">
+                    <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-[#25D366]/15 text-[#25D366]">
+                      <MessageCircle className="h-5 w-5" aria-hidden="true" />
+                    </div>
+                    <div>
+                      <h3 className="text-sm font-bold text-foreground">WhatsApp</h3>
+                      <a
+                        href={getWhatsAppUrl()}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="mt-1 block font-semibold text-brand-blue hover:underline"
+                      >
+                        {SITE.whatsappDisplay}
+                      </a>
+                      <p className="mt-1 text-xs text-muted-foreground">Message us for a quick quote</p>
                     </div>
                   </div>
 
