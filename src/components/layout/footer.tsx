@@ -21,12 +21,6 @@ export const Footer: React.FC = () => {
     { name: "Contact Support", href: "/contact" },
   ];
 
-  const complianceLinks = [
-    { name: "Privacy Policy", href: "/privacy-policy" },
-    { name: "Terms of Use", href: "/terms-of-use" },
-    { name: "Cookie Policy", href: "/cookie-statement" },
-  ];
-
   const legalLinks = [
     { name: "Privacy Policy", href: "/privacy-policy" },
     { name: "Terms of Use", href: "/terms-of-use" },
@@ -120,18 +114,6 @@ export const Footer: React.FC = () => {
             <p className="mt-4 text-sm leading-relaxed text-slate-400">
               <strong className="text-slate-300">ICO Registered:</strong> We protect user data and only share details with verified partners to compile comparison options.
             </p>
-            <ul className="mt-5 space-y-2.5">
-              {complianceLinks.map((link) => (
-                <li key={link.name}>
-                  <Link
-                    href={link.href}
-                    className="text-sm text-slate-400 transition-colors hover:text-white"
-                  >
-                    {link.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
           </div>
         </div>
 
