@@ -8,15 +8,17 @@ const PAYMENT_OPTIONS = [
       "Fast, secure card machines for every business type: retail, hospitality, or mobile.",
     image: "/online-payments.webp",
     alt: "Handheld card payment terminal",
+    href: "/services/merchant-services",
     imageClassName: "max-h-[200px] sm:max-h-[220px]",
     containerClassName: "min-h-[200px] sm:min-h-[220px]",
   },
   {
-    title: "Online payments",
+    title: "Business Funding",
     description:
-      "Seamlessly accept secure online payments on your website or e-commerce store anytime.",
-    image: "/online-payments.webp",
-    alt: "Secure online card payment terminal",
+      "Merchant cash advances, working capital and equipment funding from 3+ months trading.",
+    image: "/business-funding.png",
+    alt: "Business funding and growth capital solutions for UK SMEs",
+    href: "/services/business-funding",
     imageClassName: "max-h-[200px] sm:max-h-[220px]",
     containerClassName: "min-h-[200px] sm:min-h-[220px]",
   },
@@ -26,6 +28,7 @@ const PAYMENT_OPTIONS = [
       "Streamline operations with POS systems that integrate perfectly with your card machines.",
     image: "/epos.png",
     alt: "UCBS ePOS system with touchscreen monitor and receipt printer",
+    href: "/services/merchant-services",
     imageClassName: "max-h-[250px] sm:max-h-[280px]",
     containerClassName:
       "min-h-[230px] sm:min-h-[260px] rounded-2xl bg-white px-3 pb-2 pt-4 ring-1 ring-slate-100",
@@ -44,7 +47,7 @@ export function PaymentOptions() {
           {PAYMENT_OPTIONS.map((option) => (
             <article key={option.title} className="group flex flex-col items-center text-center">
               <Link
-                href="/services/merchant-services"
+                href={option.href}
                 className="relative mb-8 block w-full max-w-[300px]"
               >
                 <span
@@ -74,6 +77,36 @@ export function PaymentOptions() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-14 rounded-2xl border border-[#BAA2E2]/40 bg-[#BAA2E2]/15 p-6 sm:mt-16 sm:p-8 lg:flex lg:items-center lg:justify-between lg:gap-10">
+          <div className="max-w-2xl text-center lg:text-left">
+            <p className="text-sm font-bold uppercase tracking-wider text-[#2563eb]">
+              Business Funding
+            </p>
+            <h3 className="mt-2 text-xl font-bold text-[#1a1a2e] sm:text-2xl">
+              Need capital to grow? We can help.
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-slate-600 sm:text-base">
+              UCBS introduces UK businesses to trusted funding partners for merchant cash advances,
+              unsecured loans, and asset funding — available from 3+ months trading. Free quote, no
+              obligation.
+            </p>
+          </div>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-center lg:mt-0 lg:shrink-0 lg:flex-col">
+            <Link
+              href="/services/business-funding"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg bg-[#2563eb] px-6 text-sm font-bold text-white transition-colors hover:bg-[#1d4ed8] sm:text-base"
+            >
+              Explore Funding
+            </Link>
+            <Link
+              href="/contact"
+              className="inline-flex min-h-12 items-center justify-center rounded-lg border border-[#2563eb] px-6 text-sm font-bold text-[#2563eb] transition-colors hover:bg-[#2563eb]/10 sm:text-base"
+            >
+              Request Free Quote
+            </Link>
+          </div>
         </div>
       </div>
     </section>
