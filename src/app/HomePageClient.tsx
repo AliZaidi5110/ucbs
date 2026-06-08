@@ -15,6 +15,7 @@ import { PaymentOptions } from "@/components/ui/payment-options";
 import { PaymentSolutionsDna } from "@/components/ui/payment-solutions-dna";
 import { DriveBusinessForward } from "@/components/ui/drive-business-forward";
 import { BusinessFinanceSection } from "@/components/ui/business-finance-section";
+import { PartnersCarousel } from "@/components/ui/partners-carousel";
 import { SERVICES_DATA } from "@/lib/services-data";
 import { HOME_FAQS } from "@/lib/seo";
 
@@ -182,6 +183,8 @@ export function HomePageClient() {
           </div>
         </div>
       </section>
+
+      <PartnersCarousel />
 
       <section className="section-padding bg-background" aria-labelledby="faq-heading">
         <div className="page-container">
