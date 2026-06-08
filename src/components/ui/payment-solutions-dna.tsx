@@ -33,7 +33,7 @@ export function PaymentSolutionsDna() {
             Payment Solutions are in our BLOOD
           </h2>
           <p className="mt-3 text-base text-slate-500 sm:text-lg">
-            Everything your business needs to accept, manage and monitor your payments
+            Accept, manage and monitor payments — all in one place.
           </p>
         </div>
 

@@ -7,28 +7,25 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroSlides = [
   {
-    title: "One Stop Solution for All Your Merchant Services & Utility Needs",
-    subtitle: "Payments, Energy, Telecoms & Business Support",
-    description:
-      "UCBS compares merchant services, utilities, funding, and telecoms for UK businesses — one trusted partner for every essential overhead.",
+    title: "One Stop for Merchant Services & Utilities",
+    subtitle: "Payments · Energy · Telecoms",
+    description: "Compare, switch and save with one trusted UK partner.",
     ctaText: "Request Free Quote",
     ctaHref: "/contact",
     badge: "UCBS Ltd",
   },
   {
-    title: "Merchant Cash Advances & Loans for Small Business",
-    subtitle: "Funding From 3+ Months Trading",
-    description:
-      "We introduce small businesses to UK funding partners for merchant cash advances, working capital, and equipment funding — with flexible options from 3+ months trading.",
+    title: "Cash Advances & Loans for Small Business",
+    subtitle: "Funding from 3+ Months Trading",
+    description: "Working capital and growth funding through trusted UK lenders.",
     ctaText: "Request Free Quote",
     ctaHref: "/contact",
     badge: "Business Funding",
   },
   {
-    title: "Smarter Payments for Every Channel",
-    subtitle: "Card Machines, Online & ePOS Solutions",
-    description:
-      "Accept payments in-store, online, and at the till with integrated card machines, payment gateways, and ePOS systems tailored to your business.",
+    title: "Payments for Every Channel",
+    subtitle: "Card Machines · Online · ePOS",
+    description: "Lower fees. Faster checkout. In-store and online.",
     ctaText: "View Payment Solutions",
     ctaHref: "/services/merchant-services",
     badge: "Merchant Services",

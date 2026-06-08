@@ -91,9 +91,9 @@ export function HomePageClient() {
         <div className="page-container">
           <div className="mx-auto mb-12 max-w-2xl text-center sm:mb-16">
             <span className="eyebrow">What We Do</span>
-            <h2 id="services-heading" className="heading-section mt-2">Our Cost Optimisation Services</h2>
+            <h2 id="services-heading" className="heading-section mt-2">Our Services</h2>
             <p className="mt-4 text-base text-muted-foreground sm:text-lg">
-              We audit your ongoing overhead operations to unlock hidden cost-efficiencies across 7 key business areas.
+              Seven ways to cut your business costs.
             </p>
           </div>
 
@@ -217,10 +217,10 @@ export function HomePageClient() {
         <div className="page-container">
           <div className="mx-auto max-w-2xl">
             <h2 id="cta-heading" className="text-3xl font-black leading-tight sm:text-4xl">
-              Ready to Discover Hidden Savings?
+              Ready to Save?
             </h2>
             <p className="mt-4 text-base leading-relaxed text-slate-300 sm:text-lg">
-              Get your quick, zero-obligation utility and merchant services review. Our UK consultants will audit your bills and find the best options.
+              Free quote. No obligation. UK experts on your side.
             </p>
             <Link href="/contact" className="btn-accent mt-8 inline-flex">
               Request Free Quote

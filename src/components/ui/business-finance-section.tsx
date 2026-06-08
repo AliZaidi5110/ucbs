@@ -103,12 +103,10 @@ export function BusinessFinanceSection() {
           <div className="max-w-xl">
             <p className="text-lg font-semibold text-[#2563eb] sm:text-xl">Business Funding</p>
             <h2 className="mt-3 text-2xl font-bold leading-tight text-[#1a1a2e] sm:text-3xl lg:text-4xl">
-              Fund Expansion. Improve Cashflow. Purchase Stock. Purchase Equipment.
+              Fund Growth. Improve Cashflow.
             </h2>
             <p className="mt-5 text-base leading-relaxed text-slate-600 sm:text-lg">
-              Cash flow is the lifeblood of any business. And growth helps realise our visions. Our
-              innovative funding options offer you a practical and accessible way to access capital
-              with the flexibility you need.
+              Flexible funding for stock, equipment and expansion — from 3+ months trading.
             </p>
 
             <div className="mt-8 grid grid-cols-1 gap-x-8 gap-y-3 sm:grid-cols-2">

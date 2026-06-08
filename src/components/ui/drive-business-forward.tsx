@@ -11,8 +11,7 @@ export function DriveBusinessForward() {
               Drive Your Business Forward
             </h2>
             <p className="mt-6 text-base leading-relaxed text-slate-600 sm:text-lg">
-              We help empower your business to be more efficient, make more profit and open up new
-              revenue streams with top-tier solutions in payments, POS software and business funding.
+              Payments, POS and funding solutions to help your business grow.
             </p>
             <Link
               href="/contact"

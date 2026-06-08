@@ -37,7 +37,7 @@ export function PaymentOptions() {
     <section className="section-padding bg-white">
       <div className="page-container">
         <h2 className="mx-auto mb-12 max-w-3xl text-center text-2xl font-bold leading-tight text-[#002060] sm:mb-16 sm:text-3xl lg:text-4xl">
-          Choose the best way to accept payments for your business.
+          Accept payments your way.
         </h2>
 
         <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 sm:gap-10 lg:grid-cols-3 lg:gap-8">
