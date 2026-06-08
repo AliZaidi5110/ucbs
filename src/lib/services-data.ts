@@ -35,12 +35,12 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: "/services/business-funding.jpg",
   },
   {
-    title: "Business Energy",
+    title: "Business Utilities",
     description:
-      "Compare electricity and gas tariffs from top UK providers. Reduce overhead costs with customized long-term energy plans.",
+      "Compare business energy, water, and waste contracts. Reduce utility overheads with tailored UK plans.",
     icon: Zap,
     href: "/services/business-energy",
-    image: "/services/business-energy.jpg",
+    image: "/services/business-energy.webp",
   },
   {
     title: "Broadband & Telecoms",
@@ -77,5 +77,8 @@ export const SERVICES_DATA: ServiceItem[] = [
 ];
 
 export function getServiceImage(slug: string) {
+  if (slug === "business-energy") {
+    return "/services/business-energy.webp";
+  }
   return `/services/${slug}.jpg`;
 }

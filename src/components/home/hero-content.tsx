@@ -7,28 +7,28 @@ import { ChevronLeft, ChevronRight } from "lucide-react";
 
 const heroSlides = [
   {
-    title: "One Stop for Merchant Services & Utilities",
-    subtitle: "Payments · Energy · Telecoms",
-    description: "Compare, switch and save with one trusted UK partner.",
+    title: "Merchant Services",
+    subtitle: "Card Machines · Online · ePOS",
+    description: "Lower fees, faster checkout, and payment solutions built for your business.",
     ctaText: "Request Free Quote",
-    ctaHref: "/contact",
-    badge: "UCBS Ltd",
+    ctaHref: "/services/merchant-services",
+    badge: "Merchant Services",
   },
   {
-    title: "Cash Advances & Loans for Small Business",
-    subtitle: "Funding from 3+ Months Trading",
+    title: "Business Funding",
+    subtitle: "Cash Advances & Loans from 3+ Months Trading",
     description: "Working capital and growth funding through trusted UK lenders.",
     ctaText: "Request Free Quote",
-    ctaHref: "/contact",
+    ctaHref: "/services/business-funding",
     badge: "Business Funding",
   },
   {
-    title: "Payments for Every Channel",
-    subtitle: "Card Machines · Online · ePOS",
-    description: "Lower fees. Faster checkout. In-store and online.",
-    ctaText: "View Payment Solutions",
-    ctaHref: "/services/merchant-services",
-    badge: "Merchant Services",
+    title: "Business Utilities",
+    subtitle: "Energy · Water · Waste",
+    description: "Compare utilities and cut overheads with one trusted UK partner.",
+    ctaText: "Request Free Quote",
+    ctaHref: "/services/business-energy",
+    badge: "Business Utilities",
   },
 ];
 

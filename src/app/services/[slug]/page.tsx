@@ -41,8 +41,8 @@ const DETAILS_MAP: Record<
   }
 > = {
   "business-energy": {
-    title: "Business Energy Solutions",
-    badge: "Utility Audit",
+    title: "Business Utilities",
+    badge: "Utility Solutions",
     icon: Zap,
     summary: "Audit electricity and gas tariffs from over 30 leading UK energy providers to secure competitive pricing.",
     details:
