@@ -1,6 +1,7 @@
 "use server";
 
 import { db } from "@/lib/db";
+import { sendContactEmail } from "@/lib/send-contact-email";
 import { z } from "zod";
 
 const contactSchema = z.object({
@@ -14,39 +15,54 @@ const contactSchema = z.object({
 
 export type ContactInput = z.infer<typeof contactSchema>;
 
-export async function submitContactForm(data: ContactInput) {
+async function saveSubmission(data: ContactInput) {
   try {
-    // Validate inputs server-side
-    const validatedData = contactSchema.parse(data);
-
-    // Write to SQLite database
-    const submission = await db.contactSubmission.create({
+    await db.contactSubmission.create({
       data: {
-        name: validatedData.name,
-        email: validatedData.email,
-        phone: validatedData.phone,
-        company: validatedData.company,
-        service: validatedData.service,
-        message: validatedData.message,
+        name: data.name,
+        email: data.email,
+        phone: data.phone,
+        company: data.company,
+        service: data.service,
+        message: data.message,
       },
     });
+  } catch (error) {
+    console.warn("Contact submission saved to email only (database unavailable):", error);
+  }
+}
+
+export async function submitContactForm(data: ContactInput) {
+  try {
+    const validatedData = contactSchema.parse(data);
+
+    await sendContactEmail(validatedData);
+    await saveSubmission(validatedData);
 
     return {
       success: true,
-      message: "Your request has been successfully submitted! A specialist will contact you shortly.",
-      submissionId: submission.id,
+      message:
+        "Your request has been sent successfully. A UCBS specialist will contact you shortly.",
     };
   } catch (error) {
-    console.error("Prisma insertion error in submitContactForm:", error);
+    console.error("Contact form submission error:", error);
+
     if (error instanceof z.ZodError) {
       return {
         success: false,
-        message: "Validation failed: " + error.errors.map(e => e.message).join(", "),
+        message: "Validation failed: " + error.errors.map((e) => e.message).join(", "),
       };
     }
+
+    const isConfigError =
+      error instanceof Error &&
+      error.message.includes("Email delivery is not configured");
+
     return {
       success: false,
-      message: "An internal server error occurred. Please try again or email us directly.",
+      message: isConfigError
+        ? "Our email service is being set up. Please contact us directly at info@ucbsltd.co.uk or call +44 1437 957009."
+        : "We could not send your request right now. Please email info@ucbsltd.co.uk or call +44 1437 957009.",
     };
   }
 }
