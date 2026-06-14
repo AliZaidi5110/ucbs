@@ -35,9 +35,9 @@ export const SERVICES_DATA: ServiceItem[] = [
     image: "/services/business-funding.png",
   },
   {
-    title: "Business Utilities",
+    title: "Business Energy and Gas",
     description:
-      "Compare business energy, water, and waste contracts. Reduce utility overheads with tailored UK plans.",
+      "Compare business electricity and gas contracts. Reduce energy overheads with tailored UK tariffs.",
     icon: Zap,
     href: "/services/business-energy",
     image: "/services/business-energy.webp",
@@ -56,7 +56,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Compliant and cost-efficient waste collection, hazardous waste disposal, and commercial recycling audits.",
     icon: Trash2,
     href: "/services/waste-management",
-    image: "/services/waste-management.jpg",
+    image: "/services/waste-management.png",
   },
   {
     title: "Water Bills",
@@ -82,6 +82,9 @@ export function getServiceImage(slug: string) {
   }
   if (slug === "business-funding") {
     return "/services/business-funding.png";
+  }
+  if (slug === "waste-management") {
+    return "/services/waste-management.png";
   }
   return `/services/${slug}.jpg`;
 }

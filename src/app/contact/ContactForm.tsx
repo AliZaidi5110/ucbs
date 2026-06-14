@@ -54,7 +54,7 @@ export const ContactForm: React.FC = () => {
   const servicesList = [
     "Merchant Services (Card Terminals)",
     "Business Funding (Loans / Asset Funding)",
-    "Business Utilities (Energy, Water & Waste)",
+    "Business Energy and Gas",
     "Broadband & Telecoms (VoIP / Fibre)",
     "Waste Management & Recycling",
     "Water Bills & Consolidation Reviews",

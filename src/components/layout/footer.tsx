@@ -10,7 +10,7 @@ export const Footer: React.FC = () => {
   const servicesLinks = [
     { name: "Merchant Services", href: "/services/merchant-services" },
     { name: "Business Funding", href: "/services/business-funding" },
-    { name: "Business Utilities", href: "/services/business-energy" },
+    { name: "Business Energy and Gas", href: "/services/business-energy" },
     { name: "Broadband & Telecoms", href: "/services/broadband-telecoms" },
     { name: "Waste Management", href: "/services/waste-management" },
     { name: "Water Bills", href: "/services/water-bills" },

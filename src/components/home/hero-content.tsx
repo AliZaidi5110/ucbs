@@ -23,12 +23,12 @@ const heroSlides = [
     badge: "Business Funding",
   },
   {
-    title: "Business Utilities",
-    subtitle: "Energy · Water · Waste",
-    description: "Compare utilities and cut overheads with one trusted UK partner.",
+    title: "Business Energy and Gas",
+    subtitle: "Electricity & Gas Contracts",
+    description: "Compare business energy and gas tariffs with a free, no-obligation UK review.",
     ctaText: "Request Free Quote",
     ctaHref: "/services/business-energy",
-    badge: "Business Utilities",
+    badge: "Business Energy and Gas",
   },
 ];
 
