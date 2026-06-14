@@ -17,11 +17,12 @@ const PAYMENT_OPTIONS = [
     title: "Business Funding",
     description:
       "Merchant cash advances, working capital and equipment funding from 3+ months trading.",
-    image: "/business-funding.png",
-    alt: "Business funding and growth capital solutions for UK SMEs",
+    image: "/services/business-funding.png",
+    alt: "Business funding solutions for UK SMEs including working capital and flexible funding",
     href: "/services/business-funding",
-    imageClassName: "max-h-[200px] sm:max-h-[220px]",
-    containerClassName: "min-h-[200px] sm:min-h-[220px]",
+    imageClassName: "h-[200px] w-full object-cover object-center sm:h-[220px]",
+    containerClassName: "min-h-[200px] sm:min-h-[220px] rounded-2xl overflow-hidden",
+    hideShadow: true,
   },
   {
     title: "ePOS System",

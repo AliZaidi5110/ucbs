@@ -32,7 +32,7 @@ export const SERVICES_DATA: ServiceItem[] = [
       "Connect with leading UK lenders for working capital, equipment leasing, and asset funding. Loans available from 3+ months trading.",
     icon: Coins,
     href: "/services/business-funding",
-    image: "/services/business-funding.jpg",
+    image: "/services/business-funding.png",
   },
   {
     title: "Business Utilities",
@@ -79,6 +79,9 @@ export const SERVICES_DATA: ServiceItem[] = [
 export function getServiceImage(slug: string) {
   if (slug === "business-energy") {
     return "/services/business-energy.webp";
+  }
+  if (slug === "business-funding") {
+    return "/services/business-funding.png";
   }
   return `/services/${slug}.jpg`;
 }
