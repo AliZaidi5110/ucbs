@@ -6,11 +6,12 @@ const PAYMENT_OPTIONS = [
     title: "Card Machines",
     description:
       "Fast, secure card machines for every business type: retail, hospitality, or mobile.",
-    image: "/online-payments.webp",
-    alt: "Handheld card payment terminal",
+    image: "/card-machines.png",
+    alt: "Modern handheld card payment terminal accepting a payment",
     href: "/services/merchant-services",
-    imageClassName: "max-h-[200px] sm:max-h-[220px]",
-    containerClassName: "min-h-[200px] sm:min-h-[220px]",
+    imageClassName: "h-[200px] w-full object-cover object-center sm:h-[220px]",
+    containerClassName: "min-h-[200px] sm:min-h-[220px] rounded-2xl overflow-hidden",
+    hideShadow: true,
   },
   {
     title: "Business Funding",
@@ -55,18 +56,23 @@ export function PaymentOptions() {
                   aria-hidden="true"
                 />
                 <div
-                  className={`relative flex items-end justify-center overflow-hidden ${option.containerClassName}`}
+                  className={`relative flex items-center justify-center overflow-hidden ${option.containerClassName}`}
                 >
-                  <div
-                    className="absolute bottom-2 left-1/2 h-6 w-[88%] -translate-x-1/2 rounded-[50%] bg-[#dbeafe]/90 blur-[2px]"
-                    aria-hidden="true"
-                  />
+                  {!option.hideShadow && (
+                    <div
+                      className="absolute bottom-2 left-1/2 h-6 w-[88%] -translate-x-1/2 rounded-[50%] bg-[#dbeafe]/90 blur-[2px]"
+                      aria-hidden="true"
+                    />
+                  )}
                   <Image
                     src={option.image}
                     alt={option.alt}
                     width={300}
                     height={280}
-                    className={`relative z-[1] h-auto w-full object-contain object-bottom transition-transform duration-300 group-hover:scale-[1.03] ${option.imageClassName}`}
+                    className={`relative z-[1] transition-transform duration-300 group-hover:scale-[1.03] ${
+                      option.imageClassName ??
+                      "h-auto w-full object-contain object-bottom"
+                    }`}
                   />
                 </div>
               </Link>
