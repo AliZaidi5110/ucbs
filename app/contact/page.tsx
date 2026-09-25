@@ -62,9 +62,9 @@ export default function ContactPage() {
                       </svg>
                     </div>
                     <div>
-                      <h3 className="font-bold text-slate-900 dark:text-white">Freephone Consultation</h3>
-                      <a href="tel:08001234567" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
-                        0800 123 4567
+                      <h3 className="font-bold text-slate-900 dark:text-white">Direct Phone Consultation</h3>
+                      <a href="tel:+442922716852" className="text-emerald-600 dark:text-emerald-400 font-bold hover:underline">
+                        029 2271 6852
                       </a>
                     </div>
                   </div>
@@ -77,9 +77,22 @@ export default function ContactPage() {
                     </div>
                     <div>
                       <h3 className="font-bold text-slate-900 dark:text-white">Direct Email</h3>
-                      <a href="mailto:support@ucbs.co.uk" className="text-slate-600 dark:text-slate-300 hover:text-emerald-500">
-                        support@ucbs.co.uk
+                      <a href="mailto:info@ucbsltd.co.uk" className="text-slate-600 dark:text-slate-300 hover:text-emerald-500">
+                        info@ucbsltd.co.uk
                       </a>
+                    </div>
+                  </div>
+
+                  <div className="flex items-start gap-3.5">
+                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-600 dark:text-emerald-400">
+                      <svg className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" />
+                        <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+                      </svg>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-slate-900 dark:text-white">Office Location</h3>
+                      <p className="text-slate-600 dark:text-slate-300 text-xs mt-0.5">Haverfordwest, Pembrokeshire, Wales SA61 2RE</p>
                     </div>
                   </div>
 

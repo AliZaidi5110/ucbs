@@ -42,17 +42,21 @@ export default function Footer() {
             </Link>
 
             <p className="mt-4 max-w-md text-sm leading-relaxed text-slate-400">
-              UCBS (United Commercial Business Solutions) is a leading UK commercial broker specialising in modern card payment machines, Merchant Cash Advance funding, ultrafast business telecoms, and energy tariff reviews.
+              Utility Concepts Business Solutions Ltd (UCBS Ltd) is a trusted UK business solutions provider specialising in modern card payment machines, Merchant Cash Advance funding, business telecoms, and commercial utility reviews.
             </p>
 
             <div className="mt-6 flex flex-col gap-2 text-xs text-slate-400">
               <div className="flex items-center gap-2">
-                <span className="font-semibold text-slate-300">Freephone:</span>
-                <a href="tel:08001234567" className="text-emerald-400 hover:underline">0800 123 4567</a>
+                <span className="font-semibold text-slate-300">Direct Phone:</span>
+                <a href="tel:+442922716852" className="text-emerald-400 hover:underline">029 2271 6852</a>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-slate-300">Direct Email:</span>
-                <a href="mailto:support@ucbs.co.uk" className="text-emerald-400 hover:underline">support@ucbs.co.uk</a>
+                <a href="mailto:info@ucbsltd.co.uk" className="text-emerald-400 hover:underline">info@ucbsltd.co.uk</a>
+              </div>
+              <div className="flex items-center gap-2">
+                <span className="font-semibold text-slate-300">Address:</span>
+                <span>Haverfordwest, Pembrokeshire, Wales SA61 2RE</span>
               </div>
               <div className="flex items-center gap-2">
                 <span className="font-semibold text-slate-300">Hours:</span>
