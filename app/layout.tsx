@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "./components/Navbar";
 import Footer from "./components/Footer";
 import StickyCtaBar from "./components/StickyCtaBar";
+import FloatingContactWidget from "./components/FloatingContactWidget";
 import { defaultMetadata, generateLocalBusinessSchema } from "@/lib/metadata";
 
 export const metadata: Metadata = defaultMetadata;
@@ -26,6 +27,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         </main>
         <Footer />
         <StickyCtaBar />
+        <FloatingContactWidget />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

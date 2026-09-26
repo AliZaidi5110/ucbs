@@ -9,6 +9,7 @@ import ComparisonMatrix from "./components/ComparisonMatrix";
 import ServiceCardGrid from "./components/ServiceCardGrid";
 import CaseStudies from "./components/CaseStudies";
 import FaqSection from "./components/FaqSection";
+import QuickContactHub from "./components/QuickContactHub";
 import { services } from "@/lib/services";
 
 export default function HomePage() {
@@ -23,16 +24,19 @@ export default function HomePage() {
       {/* 3. SYNERGY: HOW CARD MACHINE BUSINESS FUNDING WORKS */}
       <SynergySection />
 
-      {/* 4. INTERACTIVE FUNDING & FEE SAVINGS CALCULATOR */}
+      {/* 4. FAST WAYS TO REACH US (CALL, WHATSAPP, 15-MIN CALLBACK) */}
+      <QuickContactHub />
+
+      {/* 5. INTERACTIVE FUNDING & FEE SAVINGS CALCULATOR */}
       <FundingCalculator />
 
-      {/* 5. CARD MACHINE HARDWARE SHOWCASE (£0 UPFRONT) */}
+      {/* 6. CARD MACHINE HARDWARE SHOWCASE (£0 UPFRONT) */}
       <TerminalShowcase />
 
-      {/* 6. COMPARISON: TRADITIONAL HIGH STREET BANKS VS UCBS */}
+      {/* 7. COMPARISON: TRADITIONAL HIGH STREET BANKS VS UCBS */}
       <ComparisonMatrix />
 
-      {/* 7. ALL COMMERCIAL SERVICES GRID */}
+      {/* 8. ALL COMMERCIAL SERVICES GRID */}
       <ServiceCardGrid
         heading="Comprehensive UK Commercial Solutions"
         subheading="Beyond payments and funding, we help UK businesses save thousands on their essential operating overheads."
@@ -49,10 +53,10 @@ export default function HomePage() {
         }))}
       />
 
-      {/* 8. UK MERCHANT CASE STUDIES & VERIFIED REVIEWS */}
+      {/* 9. UK MERCHANT CASE STUDIES & VERIFIED REVIEWS */}
       <CaseStudies />
 
-      {/* 9. OBJECTION-BUSTING FAQ ACCORDION */}
+      {/* 10. OBJECTION-BUSTING FAQ ACCORDION */}
       <FaqSection />
 
       {/* 10. FINAL CONVERSION ACTION SECTION */}

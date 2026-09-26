@@ -58,6 +58,15 @@ export default function StickyCtaBar() {
             <span>Call 029 2271 6852</span>
           </a>
 
+          <a
+            href="https://wa.me/442922716852?text=Hi%20UCBS,%20I'd%20like%20to%20get%20a%20fast%20quote%20for%20card%20machines%20or%20funding."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 px-3.5 py-2.5 text-xs font-bold text-emerald-400 hover:bg-emerald-500/20 transition-colors"
+          >
+            <span>💬 WhatsApp</span>
+          </a>
+
           <Link
             href="/contact"
             className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 rounded-xl bg-emerald-500 px-5 py-2.5 text-xs font-bold text-slate-950 shadow-md hover:bg-emerald-400 transition-all"

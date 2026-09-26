@@ -111,6 +111,15 @@ export default function Navbar() {
             <span>029 2271 6852</span>
           </a>
 
+          <a
+            href="https://wa.me/442922716852?text=Hello%20UCBS,%20I'd%20like%20to%20enquire%20about%20a%20card%20machine%20or%20business%20funding."
+            target="_blank"
+            rel="noopener noreferrer"
+            className="flex items-center gap-1.5 text-xs font-bold text-emerald-400 hover:text-emerald-300 transition-colors bg-emerald-500/10 px-3 py-1.5 rounded-lg border border-emerald-500/20"
+          >
+            <span>💬 WhatsApp</span>
+          </a>
+
           <Link
             href="/contact"
             className="inline-flex min-h-[42px] items-center rounded-xl bg-emerald-500 px-4 py-2 text-xs font-bold text-slate-950 shadow-md transition-all hover:bg-emerald-400 hover:shadow-emerald-500/20 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-emerald-400"
@@ -169,10 +178,20 @@ export default function Navbar() {
             ))}
             <li className="pt-2">
               <a
-                href="tel:+442922716852"
-                className="flex items-center gap-2 rounded-xl bg-slate-900 px-3 py-3 text-sm font-bold text-emerald-400"
+                href="https://wa.me/442922716852?text=Hello%20UCBS,%20I'd%20like%20to%20enquire%20about%20a%20card%20machine%20or%20business%20funding."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-center gap-2 rounded-xl bg-emerald-500/10 border border-emerald-500/30 px-3 py-3 text-sm font-bold text-emerald-400"
               >
-                <span>📞 Call UK Support: 029 2271 6852</span>
+                <span>💬 Chat on WhatsApp (Fast Reply)</span>
+              </a>
+            </li>
+            <li className="pt-1">
+              <a
+                href="tel:+442922716852"
+                className="flex items-center justify-center gap-2 rounded-xl bg-slate-900 px-3 py-3 text-sm font-bold text-white"
+              >
+                <span>📞 Call Direct: 029 2271 6852</span>
               </a>
             </li>
             <li className="pt-2">

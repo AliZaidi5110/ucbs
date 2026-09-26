@@ -127,6 +127,36 @@ export default function HeroLeadEngine() {
                   <p className="text-xs text-slate-400 mt-0.5">60-second soft check for eligibility</p>
                 </div>
               </div>
+            {/* Instant Contact CTA Buttons */}
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="https://wa.me/442922716852?text=Hi%20UCBS,%20I'd%20like%20to%20get%20a%20quote%20for%20a%20card%20machine%20or%20business%20funding."
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 rounded-xl bg-emerald-500 px-5 py-3 text-xs sm:text-sm font-bold text-slate-950 shadow-lg shadow-emerald-500/25 hover:bg-emerald-400 transition-all"
+              >
+                <svg className="h-4 w-4 fill-current" viewBox="0 0 24 24">
+                  <path d="M12.031 6.172c-3.181 0-5.767 2.586-5.768 5.766-.001 1.298.38 2.27 1.019 3.287l-.582 2.128 2.182-.573c.978.58 1.911.928 3.145.929 3.178 0 5.767-2.587 5.768-5.766.001-3.187-2.575-5.77-5.764-5.771zm3.392 8.244c-.144.405-.837.774-1.17.824-.312.045-.634.072-1.025-.054-.251-.082-.576-.192-1.017-.384-1.874-.817-3.08-2.736-3.173-2.86-.094-.125-.762-1.014-.762-1.935 0-.92.482-1.374.654-1.562.172-.187.375-.234.5-.234.125 0 .25.002.359.007.115.006.269-.044.421.323.157.379.537 1.309.584 1.404.047.094.079.204.016.329-.063.125-.094.204-.188.313-.094.11-.198.245-.283.33-.094.094-.192.196-.083.384.11.187.487.805 1.045 1.302.721.642 1.328.841 1.516.935.188.094.298.079.407-.047.11-.125.469-.546.594-.734.125-.187.25-.157.422-.094.172.063 1.094.516 1.281.609.188.094.313.141.359.219.047.078.047.453-.094.859zM12 2C6.477 2 2 6.477 2 12c0 1.891.524 3.66 1.434 5.176L2 22l4.981-1.307A9.957 9.957 0 0012 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.15c-1.637 0-3.16-.487-4.437-1.325l-.318-.21-2.955.775.789-2.879-.229-.364C3.96 14.839 3.45 13.468 3.45 12c0-4.714 3.836-8.55 8.55-8.55 4.714 0 8.55 3.836 8.55 8.55 0 4.714-3.836 8.55-8.55 8.55z" />
+                </svg>
+                <span>WhatsApp a Broker Now</span>
+              </a>
+
+              <a
+                href="tel:+442922716852"
+                className="inline-flex items-center gap-2 rounded-xl border border-slate-700 bg-slate-900/90 px-5 py-3 text-xs sm:text-sm font-semibold text-white hover:bg-slate-800 transition-all"
+              >
+                <svg className="h-4 w-4 text-emerald-400" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z" />
+                </svg>
+                <span>Call 029 2271 6852</span>
+              </a>
+
+              <a
+                href="#instant-contact"
+                className="text-xs text-slate-400 hover:text-emerald-400 underline underline-offset-4 ml-1"
+              >
+                or request 15-min callback ↓
+              </a>
             </div>
 
             {/* Trust and Social Proof Strip */}
@@ -410,6 +440,27 @@ export default function HeroLeadEngine() {
                       </svg>
                       No Credit Impact
                     </span>
+                  </div>
+
+                  <div className="pt-3 border-t border-slate-800 text-center">
+                    <p className="text-[11px] text-slate-400">
+                      Prefer instant chat?{" "}
+                      <a
+                        href="https://wa.me/442922716852?text=Hello%20UCBS,%20I'd%20like%20to%20check%20card%20machine%20rates%20and%20funding."
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-emerald-400 font-bold hover:underline"
+                      >
+                        💬 WhatsApp Us
+                      </a>{" "}
+                      or{" "}
+                      <a
+                        href="tel:+442922716852"
+                        className="text-white font-bold hover:underline"
+                      >
+                        📞 Call 029 2271 6852
+                      </a>
+                    </p>
                   </div>
                 </form>
               )}
