@@ -53,7 +53,7 @@ export default function TestimonialsCarousel({ testimonials, autoPlayInterval = 
         <div key={t.id} className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
           {t.rating && <StarRating rating={t.rating} />}
           <blockquote>
-            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">"{t.quote}"</p>
+            <p className="text-lg leading-relaxed text-slate-700 dark:text-slate-300">&ldquo;{t.quote}&rdquo;</p>
             <footer className="mt-6 flex items-center gap-4">
               <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-slate-900 text-sm font-bold text-white dark:bg-white dark:text-slate-900" aria-hidden="true">{t.author.charAt(0)}</div>
               <div>
