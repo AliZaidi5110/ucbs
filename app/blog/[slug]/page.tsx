@@ -31,7 +31,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function BlogPostPage({ params }: Props) {
   const post = getBlogPostBySlug(params.slug);
-  if (!post) notFound();
+  if (!post) {
+    notFound();
+    return null;
+  }
 
   return (
     <>
