@@ -127,6 +127,8 @@ export default function HeroLeadEngine() {
                   <p className="text-xs text-slate-400 mt-0.5">60-second soft check for eligibility</p>
                 </div>
               </div>
+            </div>
+
             {/* Instant Contact CTA Buttons */}
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a

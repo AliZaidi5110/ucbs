@@ -28,7 +28,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default function ServiceDetailPage({ params }: Props) {
   const service = getServiceBySlug(params.slug);
-  if (!service) notFound();
+  if (!service) {
+    notFound();
+    return null;
+  }
 
   return (
     <>
